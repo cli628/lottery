@@ -407,77 +407,129 @@ main {
   font-weight: 600;
 }
 
-.winner_section {
-  background: #dce7ed;
-  padding: 0 0 110px;
+
+
+/* 인터뷰  */
+.winner_section{
+  width: 100%;
+  height: 100%;
 }
 
-.winner_bg {
-  background: #dce7ed;
-  border-top-left-radius: 300px;
-  border-top-right-radius: 300px;
-  margin-top: -20px;
-  padding-top: 94px;
+.winner_section>.inner {
+  width: 100%;
+  min-width: 1440px;
+  height: 100%;
+  position: relative;
+  background: var(--main-color2);
+  border-top-left-radius: 500px;
+  border-top-right-radius: 500px;
+  padding: 800px 24px 800px;
+  box-shadow: var(--ball_shadow);
+  /* display: flex; */
+  /* flex-direction: column; */
 }
 
-.winner_section h2 {
-  color: #20bc98;
-  font-size: clamp(3rem, 9rem, 5rem);
+.winner_section>.inner>.tit{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: var(--main-color5);
+  font-size: 200px;
   line-height: .95;
-  letter-spacing: -1px;
-  padding-bottom: 28px;
 }
 
-.winner_content {
+
+.winner_section>.inner>.tit>p:nth-child(1){
+  position: absolute;
+  top: 15%;
+  left: 10vw;
+}
+
+
+.winner_section>.inner>.tit>p:nth-child(2){
+  position: absolute;
+  top: 25%;
+  right: 10vw;;
+}
+
+.winner_section>.inner .winner_interview{
+  flex: 1;
+}
+.txt_box {
+  flex: 1;
+
+}
+.winner_section>.inner .winner_interview .txt_box .txt{
+  width: 100%;
+  height: 100%;
+  position: relative;
   display: flex;
+  align-items: center;
   justify-content: center;
-  align-items: flex-end;
-  gap: 26px;
+  gap: 20px;
 }
 
-.winner_card {
-  max-width: 330px;
-  background: #eef3e6;
-  border: 1px solid #d9e0d1;
-  border-radius: 12px;
-  padding: 14px;
+.winner_section>.inner .winner_interview .txt_box .txt h3{
+  font-size: 24px;
 }
 
-.winner_card .label {
-  padding-bottom: 10px;
-  font-size: .95rem;
-  color: #1d2b2f;
+.winner_section>.inner .winner_interview .txt_box .txt a{
+  padding: 8px 24px;
+  background: var(--grass-bg2);
+  border-radius: var(--round);
 }
-
-.winner_card .chips {
+.winner_section>.inner .winner_interview .txt_box .txt a i{
+  padding-right: 6px;
+}
+.winner_section>.inner .winner_interview .txt_box .txt a:hover{
+  color: var(--w-color);
+  background: var(--main-color3);
+}
+.winner_section>.inner .winner_interview .txt_box .txt .menu_btn{
+  width: 100%;
+  height: 100%;
+  position: relative;
   display: flex;
-  gap: 6px;
-  padding-bottom: 14px;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  /* background: #222; */
 }
 
-.winner_card .chips span {
-  padding: 5px 9px;
-  border-radius: 999px;
-  border: 1px solid #cfd8d8;
-  font-size: .76rem;
-  background: #fff;
+.winner_section>.inner .winner_interview .txt_box .menu_btn button{
+  padding: 8px 24px;
+  border-radius: var(--round);
+  box-shadow: var(--ball_shadow);
 }
 
-.winner_card .chips .on {
-  background: #32c7a4;
-  color: #fff;
-  border-color: transparent;
+.winner_section>.inner .winner_interview .txt_box .menu_btn button:hover{
+  background: var(--main-color5);
+  color: var(--w-color);
 }
 
-.winner_card .desc {
-  font-size: .84rem;
-  color: #3e5055;
+.winner_section>.inner .winner_interview .interview_card {
+  width: 100%;
+  height: 100%;
+  display: flex;
 }
 
-.winner_photo {
-  width: min(430px, 45%);
-  aspect-ratio: 1.15/1;
-  border-radius: 999px;
+.winner_section>.inner .winner_interview .interview_card .card{
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--round);
+  background: var(--grass-bg3);
+  box-shadow: var(--ball_shadow);
+
+}
+
+.inner .winner_photo .img_box{
+  width: 50%;
+  height: 700px;
+  flex: 1;
+
   background: url(../asset/img/260206_sp_1000102_winner.png) center/cover no-repeat;
   box-shadow: 0 20px 30px rgba(59, 80, 88, .14);
 }

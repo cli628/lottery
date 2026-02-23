@@ -412,131 +412,199 @@ main {
 /* 인터뷰  */
 .winner_section{
   width: 100%;
-  height: 100%;
 }
 
-.winner_section>.inner {
-  width: 100%;
-  min-width: 1440px;
-  height: 100%;
-  position: relative;
-  background: var(--main-color2);
-  border-top-left-radius: 500px;
-  border-top-right-radius: 500px;
-  padding: 800px 24px 800px;
-  box-shadow: var(--ball_shadow);
-  /* display: flex; */
-  /* flex-direction: column; */
+.winner_section>.inner{
+  width:100%;
+  min-width:1440px;
+  position:relative;
+  background:var(--main-color2);
+  border-top-left-radius:500px;
+  border-top-right-radius:500px;
+  box-shadow:var(--ball_shadow);
+  padding: 700px 0100px 800px;
+  display:flex;
+  align-items:center;
+  /* justify-content:space-between; */
+  /* gap: 80px; */
+  overflow:hidden;
 }
 
+/* 행운의 주인공은? 부분 */
 .winner_section>.inner>.tit{
   width: 100%;
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  color: var(--main-color5);
+  position:absolute;
+  top:90px;
+  z-index:1;
+  color:var(--main-color5);
+  font-weight:600;
+  line-height:.92;
+  letter-spacing:-.02em;
   font-size: 200px;
-  line-height: .95;
+  padding: 200px;
+  z-index: 1;
 }
 
-
+/* 글자 위치 */
 .winner_section>.inner>.tit>p:nth-child(1){
-  position: absolute;
-  top: 15%;
-  left: 10vw;
+  position:absolute;
+  top: 10vh;
+  left: 15vw;
 }
-
 
 .winner_section>.inner>.tit>p:nth-child(2){
-  position: absolute;
-  top: 25%;
-  right: 10vw;;
+  position:absolute;
+  top: 30vh;
+  right: 15vw;
 }
-
-.winner_section>.inner .winner_interview{
-  flex: 1;
-}
-.txt_box {
-  flex: 1;
-
-}
-.winner_section>.inner .winner_interview .txt_box .txt{
+/* left column 인터뷰 글*/
+.winner_section>.inner>.winner_interview{
   width: 100%;
   height: 100%;
-  position: relative;
   display: flex;
+  flex-direction:column;
+}
+.winner_section>.inner>.winner_interview .txt_box{
+  width:100%;
+  max-width:560px;
+  display:flex;
+  flex-direction:column;
+  gap:24px;
   align-items: center;
+}
+
+/* guide + subtitle */
+.winner_section>.inner>.winner_interview .txt_box>.txt{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+.winner_section>.inner>.winner_interview .txt_box>.txt>a{
+  display:inline-flex;
+  align-items:center;
   justify-content: center;
-  gap: 20px;
+  gap:  8px;
+  padding:8px 12px;
+  border-radius:var(--round);
+  background:var(--grass-bg2);
+  box-shadow:var(--ball_shadow);
+  z-index: 2;
 }
-
-.winner_section>.inner .winner_interview .txt_box .txt h3{
-  font-size: 24px;
+.winner_section>.inner>.winner_interview .txt_box>.txt>a:hover{
+  background:var(--main-color3);
+  color:var(--w-color);
 }
-
-.winner_section>.inner .winner_interview .txt_box .txt a{
-  padding: 8px 24px;
+.winner_section>.inner>.winner_interview .txt_box>.txt>h3{
+  font-size:22px;
+  font-weight:700;
+  color:var(--gray-10);
+}
+/* 메뉴버튼 */
+.winner_section>.inner>.winner_interview .txt_box>.menu_btn{
+  display:flex;
+  gap:10px;
+  z-index: 2;
+}
+.winner_section>.inner>.winner_interview .txt_box>.menu_btn>button{
+  padding:10px 18px;
+  border-radius:var(--round);
+  box-shadow:var(--ball_shadow);
+  color:var(--b-color);
+}
+.winner_section>.inner>.winner_interview .txt_box>.menu_btn>button.active{
   background: var(--grass-bg2);
-  border-radius: var(--round);
-}
-.winner_section>.inner .winner_interview .txt_box .txt a i{
-  padding-right: 6px;
-}
-.winner_section>.inner .winner_interview .txt_box .txt a:hover{
   color: var(--w-color);
-  background: var(--main-color3);
 }
-.winner_section>.inner .winner_interview .txt_box .txt .menu_btn{
+.winner_section>.inner>.winner_interview .txt_box>.menu_btn>button:hover{
+  background:var(--main-color5);
+  color:var(--w-color);
+}
+
+/* quote card */
+.winner_section>.inner>.winner_interview .txt_box>.interview_card{
+  width: 565px;
+  height: 230px;
+  border-radius:18px;
+  background:var(--grass-bg3);
+  box-shadow:var(--ball_shadow);
+  padding:30px 24px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+.winner_section>.inner>.winner_interview .interview_card>.interview_tit{
   width: 100%;
-  height: 100%;
-  position: relative;
-  display: flex;
+  height: 40px;
   align-items: center;
-  justify-content: center;
-  gap: 20px;
-  /* background: #222; */
-}
-
-.winner_section>.inner .winner_interview .txt_box .menu_btn button{
-  padding: 8px 24px;
-  border-radius: var(--round);
-  box-shadow: var(--ball_shadow);
-}
-
-.winner_section>.inner .winner_interview .txt_box .menu_btn button:hover{
-  background: var(--main-color5);
-  color: var(--w-color);
-}
-
-.winner_section>.inner .winner_interview .interview_card {
-  width: 100%;
-  height: 100%;
   display: flex;
+  justify-content:space-between;
+  font-weight:700;
+  color:var(--gray-08);
 }
 
-.winner_section>.inner .winner_interview .interview_card .card{
+.winner_section>.inner>.winner_interview .interview_card>.interview_txt{
+  height: 100%;
+}
+.winner_section>.inner>.winner_interview .interview_card>.interview_txt>p{
+  height: 100%;
+  width: 100%;
   flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 400;
+  line-height:1.5;
+}
+
+/* 당첨자 사진 부분 */
+.winner_section>.inner>.winner_photo{
+  flex:1;
+  z-index:2;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+/* mask */
+.winner_section>.inner>.winner_photo .clover_wrap{
+  top: 0;
+  left: 0;
+  position:relative;
+  width:833px;
+  height:641px;
+}
+
+/* .winner_section>.inner>.winner_photo .clover_wrap .clover_mask1{
+  position:absolute;
+  width:500px;
+  height:280px;
+  border-radius:50%;
+  z-index:1;
+  transform: rotateX(45deg);
+}
+.winner_section>.inner>.winner_photo .clover_wrap .clover_mask2{
+  position:absolute;
+  width:500px;
+  height:280px;
+  border-radius:50%;
+  z-index:1;
+  transform: rotateX(-45deg);
+
+} */
+/* 사진 */
+.winner_section>.inner>.winner_photo .clover_wrap .img_box{
   width: 100%;
   height: 100%;
-  border-radius: var(--round);
-  background: var(--grass-bg3);
-  box-shadow: var(--ball_shadow);
+  position:absolute;
+  background:url(../asset/img/260206_sp_1000102_winner.png) center/cover no-repeat;
+  z-index:2;
 
 }
 
-.inner .winner_photo .img_box{
-  width: 50%;
-  height: 700px;
-  flex: 1;
 
-  background: url(../asset/img/260206_sp_1000102_winner.png) center/cover no-repeat;
-  box-shadow: 0 20px 30px rgba(59, 80, 88, .14);
-}
-
+/* 꾸밈 원 부분 */
 .wave_section {
-  padding: 34px 0 56px;
-  background: #f7f3ee;
 }
 
 .wave_section .inner {
@@ -545,14 +613,53 @@ main {
 }
 
 .wave {
+  width: 100%;
   height: 34px;
-  border-radius: 999px;
+  border-radius: 100%;
   background: radial-gradient(ellipse at center, rgba(212, 220, 223, .8) 0%, rgba(228, 234, 236, .35) 62%, rgba(243, 245, 246, .08) 100%);
 }
 
+/* 서비스 */
+
 .service_section {
-  padding: 82px 0 110px;
-  background: #dce7ed;
+  width:100%;
+  
+}
+.service_section .inner{
+  min-width:1440px;
+  position:relative;
+  background:var(--main-color2);
+  border-bottom-left-radius:500px;
+  border-bottom-right-radius:500px;
+  box-shadow:var(--ball_shadow);
+  padding: 700px 0 800px;
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content: center;
+  gap: 80px;
+  overflow:hidden;
+}
+
+.service_section .inner .tit{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.service_section .inner .tit p{
+  font-size: 36px;
+  color:var(--main-color5);
+}
+
+.service_section .inner .tit h2{
+  font-size: 48px;
 }
 
 .service_grid {
@@ -582,6 +689,7 @@ main {
   background: #edf1ea;
 }
 
+/* 질문하기 */
 .faq_section {
   padding: 96px 0 60px;
   background:
@@ -668,9 +776,6 @@ main {
   padding: 20px 0 0 0 ;
 }
 
-.marquee_section h2{
-  color: var(--card);
-}
 
 .marquee_wrap{
   display: flex;

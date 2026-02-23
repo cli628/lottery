@@ -1,26 +1,26 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   /* jsap */
- document.addEventListener("DOMContentLoaded", (event) => {
+ /* document.addEventListener("DOMContentLoaded", (event) => {
   gsap.registerPlugin(ScrollTrigger)
   // gsap code here!
 
- });
+ }); */
 
   /* 메인비주얼 */
-const _SELECTOR={
+const selecter={
   btn:".main_visual>.inner>.bottom_btn",
   main:".main_visual>.inner>.slide>.top_sw",
 };
 
-let _BTN_OPT={
+let btnOpt={
   slidesPerView:5,
   watchSlidesProgress:true,
 };
 
-let swiperBtn=new Swiper(_SELECTOR.btn,_BTN_OPT);
+let swiperBtn=new Swiper(selecter.btn,btnOpt);
 
-let swiperMain=new Swiper(_SELECTOR.main,{
+let swiperMain=new Swiper(selecter.main,{
   loop:true,
   thumbs:{swiper:swiperBtn},
 });
@@ -63,7 +63,6 @@ document.querySelectorAll('.sub').forEach((wrap) => {
   });
 
   wrap.addEventListener('mouseleave', () => {
-
     balls.forEach((ball) => {
       ball.style.transform = `translate(0,0)`;
     });
@@ -98,43 +97,43 @@ const targetNumber = 166439507143;
 countUp(numberEl, targetNumber, 2000);
 
 /* 메인 카드 선택부분 */
-const swiper = new Swiper(".card_all", {
+let swiper = new Swiper(".card_all", {
   effect: "coverflow",
   grabCursor: true,
   centeredSlides: true,
   slidesPerView: "2",
   loop:true,
   navigation: {
-        nextEl: ".swiper_button_next",
-        prevEl: ".swiper_button_prev",
-      },
+    nextEl: ".swiper_button_next",
+    prevEl: ".swiper_button_prev",
+    },
   coverflowEffect: {
-    rotate: -30,
-    // stretch: 1,
-    // depth: 1,
-    // modifier: 1,
+    rotate: -25,
   },
   scrollbar: {
-        el: ".swiper-scrollbar",
-      },
-
+    el: ".swiper-scrollbar",
+    },
+  /* pagination: {
+    el: ".swiper_pagination",
+    clickable: true,
+    
+  } */
 });
-const pick_selector={
-  btn:"swiper_button_next, swiper_button_prev",
+
+let pick_selector={
+  btn:".arrow_btn swiper_button_next,.arrow_btn swiper_button_prev,.pick .tit_section swiper_pagination li",
   main:".pick>.inner card_all swiper-slide",
-  
 };
 
-const pick_btn_opt={
+let pick_btn_opt={
   watchSlidesProgress:true,
 };
-const pickBtn = new Swiper(pick_selector.btn, pick_btn_opt);
+let pickBtn = new Swiper(pick_selector.btn, pick_btn_opt);
 
-const pickMain=new Swiper(pick_selector.main, {
+let pickMain=new Swiper(pick_selector.main, {
   loop:true,
   thumbs:{swiper:pick_btn_opt},
 });
-    
 
 
 //marquee 

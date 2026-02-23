@@ -24,7 +24,7 @@ color: var(--w-color); */
 
 :root {
   font-size: 18px;
-  --main-color1: #F9FFED;
+  --main-color1: #FEF8F2;
   --main-color2: #EAF2F6;
   --main-color3: #A6BFC5;
   --main-color4: #FDFFC7;
@@ -66,14 +66,13 @@ color: var(--w-color); */
 body {
   font-family: 'SUITE Variable', sans-serif, 'Pretendard';
 }
-
 .wrap>.bg {
   position: fixed;
   width: 100%;
   height: 100%;
   left: 0;
   top: 0;
-  background: #FEF8F2;
+  background: var(--main-color1);
   pointer-events: none;
   z-index: -100;
 }
@@ -92,7 +91,7 @@ header {
   position: fixed;
   right: 0;
   top: 0;
-  background-color: var(--glass-bg2);
+  background-color: var(--glass-bg4);
   display: flex;
   transition: .3s;
   z-index: 10;
@@ -167,6 +166,7 @@ header nav .gnb>li>a {
   display: flex;
 }
 
+/* 메뉴 */
 header nav .gnb>li>.gnb_dp2 {
   width: 100%;
   position: absolute;
@@ -174,8 +174,7 @@ header nav .gnb>li>.gnb_dp2 {
   flex-direction: column;
   padding: 24px;
   font-size: .889rem;
-  background-color: rgba(255,255,255,.18);
-  background: linear-gradient(rgba(43, 207, 161, .18), rgba(116, 191, 197, .25)), linear-gradient(to right, rgba(116, 191, 197, .25), rgba(253, 255, 199, .15));
+  background: var(--glass-bg4);
   background-blend-mode: overlay;
   border-bottom: 1px solid rgba(255, 255, 255, .15);
   text-shadow: var(--font_B);
@@ -187,7 +186,7 @@ header nav .gnb>li>.gnb_dp2 {
   backdrop-filter: blur(5px) saturate(50%);
   -webkit-backdrop-filter: blur(5px) saturate(50%);
   pointer-events: none;
-  box-shadow: var(--font_W);
+  box-shadow: var(--ball_shadow);
 }
 
 header nav .gnb>li:hover>.gnb_dp2 {
@@ -281,7 +280,6 @@ header .right .ham_icon li {
   width: 23px;
   height: 2px;
   transition: transform .3s;
-  /* transform만 변환이 0.5초 걸리는것임 */
   border-radius: var(--round);
   background: var(--b-color);
 }
@@ -300,6 +298,7 @@ header.on .right a>i{
   color: var(--gray-08);
   transition: .2s;
 }
+/* hamicon */
 header.on .right .ham_icon li{
   background-color: var(--gray-08);
 }
@@ -330,70 +329,64 @@ header.on .right .ham_icon li:nth-child(3) {
 
 header .ham_menu {
   position: absolute;
-  top: 8px;
-  /* right: 14vh; */
+  top: 12px;
   right: 0;
   width: 1000px;
-  height: 800px;
+  height: 720px;
   transform-origin: top right;
-  transform: scale(.2);
+  transform: scale(.06);
   opacity: 0;
-  background-blend-mode: overlay;
-  text-shadow: var(--font_B);
   color: var(--gray-08);
   border-top: 1px solid rgba(255, 255, 255, .2);
   border-bottom: 1px solid rgba(255, 255, 255, .15);
   border-left: 1px solid linear-gradient(rgba(43, 207, 161, .18));
   z-index: 50;
-  border-radius: var(--round);
+  border-radius: 80%;
   overflow: hidden;
   box-shadow: var(--ball_shadow);
   backdrop-filter: blur(14px) saturate(50%);
   pointer-events: none;
+  transition: transform .5s, opacity .5s, border-radius .3s;
 }
 
 /* 열렸을 때 */
 header.on .ham_menu {
+  border-radius: var(--round);
   transform: scale(1);
   opacity: 1;
-  display: flex;
-  transition: transform .5s, opacity .05s;
   pointer-events: all;
-
+  padding: 50px 0;
 }
 
 header .ham_menu .container {
   width: 100%;
   height: 100%;
-  padding: 24px 24px ;
-  margin: 0 auto;
+  padding: 24px 0;
   overflow: auto;
   top: 0;
   left: 0;
-  padding: 50px 24px;
+
 }
 
 header .ham_menu .container::-webkit-scrollbar {
-  display: none; /* Chrome/Safari */
+  display: none; 
 }
 
 
 header .ham_menu .container .list {
+  position: relative;
   width: 100%;
   height: 100%;
-  gap: 4px;
   display: flex;
-  top: 0;
-  left: 0;
+
 }
 
 header .ham_menu .container .list>li {
   width: 100%;
   height: 100%;
   display: block;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  padding: 0 8px;
+
 }
 
 header .ham_menu .container .list>li>a {
@@ -404,7 +397,7 @@ header .ham_menu .container .list>li>a {
   color: var(--gray-09);
   font-size: 1.3rem;
   font-weight: 500;
-  cursor: pointer;
+  cursor: default;
   text-shadow: var(--font_B);
 }
 
@@ -492,7 +485,7 @@ footer>.inner{
   color: var(--glass-bg1);
   text-shadow: var(--font_W);
    /* background-color: rgba(255,255,255,.18); */
-  background: linear-gradient(rgba(43, 207, 161, .18), rgba(116, 191, 197, .25)), linear-gradient(to right, rgba(116, 191, 197, .25), rgba(253, 255, 199, .15));
+  background: var(--glass-bg4);
   background-blend-mode: overlay;
   border-bottom: 1px solid rgba(255, 255, 255, .15);
   text-shadow: var(--font_B);

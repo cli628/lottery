@@ -28,16 +28,6 @@
 
 <body>
   <div class="wrap">
-    <section class="bg">
-      <div class="vid_ball1"></div>
-      <div class="vid_ball2"></div>
-      <div class="vid_ball3"></div>
-      <div class="vid_ball4"></div>
-      <div class="vid_ball5"></div>
-      <div class="vid_ball6"></div>
-      <div class="vid_ball7"></div>
-      <div class="vid_ball8"></div>
-    </section>
     <header>
       <div class="inner">
         <h1><a href="#">동행복권</a></h1>
@@ -431,13 +421,13 @@
             <div class="swiper-wrapper">
               <div class="swiper-slide">
                 <div class="txt_area">
+                  <div class="txt">
+                    <p>PC 없이도 OK! 앱 설치없이 모바일로 간편하게 로또6/45를 구매하세요</p>
+                  </div><!-- //.txt -->
                   <div class="tit">
                     <h2>로또 6/45,</h2>
                     <p><em>이제는 <strong>모바일웹</strong> 에서도</em></p>
                   </div><!-- //.tit -->
-                  <div class="txt">
-                    <p>PC 없이도 OK! 앱 설치없이 모바일로 간편하게 로또6/45를 구매하세요</p>
-                  </div><!-- //.txt -->
                   <div class="more_btn">
                     <a href="#" class="more">
                     <span>이용안내 바로가기</span><i class="fa-solid fa-angles-right"></i>
@@ -572,19 +562,19 @@
           </div><!-- //.ball_all -->
         </div><!-- //.sub -->
       </div><!-- //.main_visual -->
-      <section class="pick">
+      <section class="pick_section">
         <div class="inner">
-          <div class="swiper-pagination">
+          <div class="tit_section">
             <div class="tit">
               <p>언제나, 어디서나 함께하는 행운</p>
               <h2>추첨식 복권중에 골라보세요</h2>
-            </div>
-              <ul class="btn_all">
-                <li><button type="button">추첨식</button></li>
-                <li><button type="button">즉석식</button></li>
-                <li><button type="button">스피또</button></li>
-              </ul><!-- //.btn_all -->
-            </div><!-- //.swiper-pagination -->
+            </div><!-- //.tit -->
+            <ul class="swiper_pagination">
+              <li><button type="button" class="">추첨식</button></li>
+              <li><button type="button">즉석식</button></li>
+              <li><button type="button">스피또</button></li>
+            </ul><!-- //.swiper-pagination -->
+            </div><!-- //.tit_section -->
           <div class="swiper card_all">
             <div class="swiper-wrapper">
               <div class="swiper-slide card lotto">
@@ -910,19 +900,21 @@
               <div class="clover_mask2">
               </div><!-- //.clover_mask2 -->
               <div class="img_box">
+                <div class="photo">
+                </div><!-- //.photo -->
               </div><!-- //.img_box -->
             </div><!-- //.clover_wrap -->
           </div><!-- //.winner_photo -->
         </div><!-- //.inner -->
       </section><!-- //.winner_section -->
-      <section class="wave_section">
+      <section class="ball_bg">
         <div class="inner">
-          <div class="wave"></div>
-          <div class="wave"></div>
-          <div class="wave"></div>
-          <div class="wave"></div>
+          <div class="ball"></div>
+          <div class="ball"></div>
+          <div class="ball"></div>
+          <div class="ball"></div>
         </div><!-- //.inner -->
-      </section><!-- //.wave_section -->
+      </section><!-- //.ball_bg -->
       <section class="service_section">
         <div class="inner">
           <div class="tit">
@@ -939,33 +931,55 @@
             <li><a href="#">과몰입 상담</a></li>
             <li><a href="#">홍보센터</a></li>
           </ul><!-- //.service_grid -->
-        </div>
-      </section>
-
+        </div><!-- //.inner -->
+      </section><!-- //.service_section -->
       <section class="faq_section">
         <div class="inner">
-          <div class="notice_pills">
-            <a href="#">불법행위를 발견하셨다면, 신고해주세요</a>
-            <a href="#">사주 하는 질문</a>
-          </div>
-          <div class="faq_list">
-            <a href="#">복권은 누구든지 구매할 수 있나요?</a>
-            <a href="#">구입한도는 어떻게 되나요?</a>
-            <a href="#">당첨금은 언제까지 지급받을 수 있나요?</a>
-          </div>
-        </div>
-      </section>
-      <section class="brand_row">
-        <div class="inner">
-          <ul>
-            <li>기획재정부</li>
-            <li>행정안전부</li>
-            <li>WLA</li>
-            <li>APLA</li>
-            <li>한국복권협회</li>
-          </ul>
-        </div>
-      </section>
+          <div class="report">
+            <a href="#">불법행위를 목격하셨다면, 신고하세요!</a>
+            <h2>신고서 작성하기</h2>
+            <a href="#">불법신고센터</a>
+            <div class="tit">
+              <a href="#">자주 하는 질문</a>
+            </div><!-- //.tit -->
+          </div><!-- //.report -->
+          <ul class="faq_list">
+            <li>
+              <p><span>Q34</span>내가 요청하지 않은 인증번호 문자메시지를 받았어요</p>
+              <button type="button" href="#"><i class="fa-solid fa-angles-right"></i></button>
+              <p>청소년보호법 제2조제1호의 규정에 의한 청소년은 복권을 구입할 수 없습니다.</p> 
+              <p>19세가 되는 해의 1월 1일부터 구입할 수 있습니다.</p>
+            </li>
+            <li>
+              <p><span>Q23</span>복권은 누구든지 구매할 수 있나요?</p>
+              <button type="button" href="#"><i class="fa-solid fa-angles-right"></i></button>
+              <p>청소년보호법 제2조제1호의 규정에 의한 청소년은 복권을 구입할 수 없습니다.</p>
+                <p>19세가 되는 해의 1월 1일부터 구입할 수 있습니다.</p>
+            </li>
+            <li>
+                <p><span>Q36</span>구입한도는 어떻게 되나요??</p>
+                <button type="button" href="#"><i class="fa-solid fa-angles-right"></i></button>
+                <p>1인당 1회 10만원을 초과하여 복권을 구매하여서는 안됩니다.</p>
+                <p>(복권및복권기금법시행령 제3조)</p>
+            </li>
+            <li>
+              <p><span>Q31</span>당첨금은 언제까지 지급받을 수 있나요?</p>
+              <button type="button" href="#"><i class="fa-solid fa-angles-right"></i></button>
+              <p>복권 및 복권기금법 제9조(복권당첨금의 소멸시효 등)에 따라</p>
+              <p>온라인복권(로또), 결합복권(연금), 추첨식 전자복권은 해당 회차의 지급 개시일로부터 1년간입니다.</p>
+              <p>즉석식 인쇄복권과 즉석식 전자복권의 경우에는 판매기간 종료일로부터 1년간입니다.</p>
+              <p>1년간 당첨금을 받을 권리를 행사하지 않으면 소멸시효가 완성됩니다.</p>
+            </li>
+            <li>
+              <p><span>Q24</span>복권기금을 지원 받고 싶습니다. 어떻게 해야 하나요?</p>
+              <p>현행 복권및복권기금법(제26조)상 복권기금 공익사업 사용신청은 중앙행정기관의 장이 할 수 있습니다.</p>
+              <p>따라서 복권기금을 지원받고자 할 경우 해당 중앙행정기관에 미리 신청하셔서 중앙행정기관의 장이 복권기금의 용도,</p> <p>사업내용, 사용 신청금액 등을 점검하여 복권기금사업에 적정하다고 판단될 경우 기획예산처 복권위원회에 제출하게 됩니다.</p>
+              <p>* 복권기금사용신청지침 통보(~2월말) → 사용신청서 접수(~3월말) → 복권위사무처 사업심의 및 복권위원회 의결 후 예산실 제출(~5월말) → 국회확정(~12월)</p>
+              <button type="button" href="#"><i class="fa-solid fa-angles-right"></i></button>
+            </li>
+          </ul><!-- //.faq_list -->
+        </div><!-- //.inner -->
+      </section><!-- //.faq_section -->
       <section class="marquee_section">
         <div class="marquee_wrap">
           <div class="marquee_row">

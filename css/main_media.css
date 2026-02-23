@@ -1,0 +1,115 @@
+﻿@charset "utf-8";
+
+@media (max-width: 1280px) {
+  .sub .inner {
+    width: calc(100% - 56px);
+  }
+
+  .pick_section::before {
+    width: calc(100% - 40px);
+  }
+
+  .service_grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .sub .inner {
+    width: calc(100% - 28px);
+  }
+
+  .pick_section {
+    padding: 62px 0 80px;
+  }
+
+  .pick_wrap {
+    gap: 10px;
+  }
+
+  .pick_cards {
+    grid-template-columns: 1fr;
+  }
+
+  .pick_nav {
+    display: none;
+  }
+
+  .winner_bg {
+    border-top-left-radius: 110px;
+    border-top-right-radius: 110px;
+    padding-top: 58px;
+  }
+
+  .winner_section h2 {
+    font-size: 3rem;
+    text-align: left;
+  }
+
+  .winner_content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .winner_photo {
+    width: 100%;
+    max-width: 420px;
+  }
+
+  .wave {
+    height: 24px;
+  }
+
+  .service_section {
+    padding: 60px 0 76px;
+  }
+
+  .service_grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .faq_section {
+    padding: 60px 0 44px;
+  }
+
+  .notice_pills a {
+    min-height: 62px;
+    padding: 0 22px;
+    font-size: .95rem;
+  }
+
+  .faq_list a {
+    min-height: 58px;
+    padding: 0 22px;
+    font-size: 1rem;
+  }
+
+  footer {
+    padding-bottom: 16px;
+  }
+
+  .footer_shell {
+    width: calc(100% - 20px);
+  }
+
+  .footer_shell .inner {
+    width: calc(100% - 26px);
+    padding: 14px 0;
+  }
+
+  .footer_top {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .footer_top ul {
+    justify-content: flex-start;
+    gap: 8px 10px;
+  }
+
+  .footer_top a,
+  .footer_info p,
+  .copy {
+    font-size: .72rem;
+  }
+}

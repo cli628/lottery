@@ -7,9 +7,10 @@
   --main-color3: #A6BFC5;
   --main-color4: #FDFFC7;
   --main-color5: #2BCFA1;
-  --grass-bg1: radial-gradient(rgba(43, 207, 161, .18), rgba(116, 191, 197, .25));
-  --grass-bg2: rgba(116, 191, 197, .25);
-  --grass-bg3: rgba(253, 255, 199, .25);
+  --glass-bg1: radial-gradient(rgba(43, 207, 161, .18), rgba(116, 191, 197, .25));
+  --glass-bg2: rgba(116, 191, 197, .25);
+  --glass-bg3: rgba(253, 255, 199, .25);
+  --glass-bg4: rgba(122, 122, 122, 0.25);
   --w-color: #fff;
   --gray-01: #f6f6f6;
   --gray-02: #eeeeee;
@@ -28,6 +29,7 @@
   --pretenderd-: "Pretendard";
   --round: 24px;
   --ball_shadow: 0 0 5px rgba(0,0,0,.2);
+  --bg-ball: radial-gradient(84% 84% at 50% 16%, rgba(166, 191, 197, 0.20) 50%, rgba(166, 191, 197, 0.00) 100%);
 }
 
 main {
@@ -43,29 +45,22 @@ main {
   position: relative;
 }
 
-.main_visual>.inner .slide .swiper{
-  width: 100%;
-  height: 100%;
+.main_visual>.inner>.slide>.top_sw {
+  width: 70vw;
+  min-width: 65vw;
   display: flex;
   flex-direction: column;
-  top: 0;
+  height: 100%;
+  position: absolute;
+  height: 100%;
+  bottom: 0;
   left: 0;
   -webkit-mask-image: linear-gradient(to right, #000 90%, transparent 100%);
   mask-image: linear-gradient(to right, #000 90%, transparent 100%);
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
-  -webkit-mask-size: 60% 100%;
-  mask-size: 60% 100%;
-}
-
-
-.main_visual>.inner>.slide>.top_sw {
-  width: 100%;
-  max-width: 1000px;
-  height: 100%;
-  position: absolute;
-  height: 100%;
-  bottom: 0;
+  -webkit-mask-size: 90% 100%;
+  mask-size: 90% 100%;
 }
 .main_visual>.inner>.slide>.top_sw .swiper-wrapper{
   transform-origin: right center;
@@ -165,20 +160,32 @@ main {
 
 .main_visual .txt_area .sub_txt{
   position: absolute;
-  bottom: 40vh;
+  left: 5vw;
+  bottom: 30vh;
   flex: 1;
-  color: var(--w-color);
+  padding: 24px;
+  color: var(--gray-03);
   text-shadow: var(--font_W);
+  /* background: var(--glass-bg4); */
+  background: var(--glass-bg4);
+  backdrop-filter: blur(20px) saturate(50%);
+  border-radius: var(--round);
 }
+
+.main_visual .txt_area .sub_txt li:nth-child(1),
+.main_visual .txt_area .sub_txt li:nth-child(4){
+  color: var(--w-color);
+}
+
 
 /* 버튼부분 */
 .main_visual .txt_area .more_btn{
   width: 220px;
+  backdrop-filter: blur(25px) saturate(50%);
   border-radius: var(--round);
   padding: 12px 24px;
-  /* grass */
-  backdrop-filter: blur(55px) saturate(50%);
-  background: var(--grass-bg1);
+  /* glass */
+  background: var(--glass-bg1);
   border-top: 1px solid rgba(116, 191, 197, .35);
   border-right: 1px solid rgba(255, 255, 255, 0.4);
   border-left: 1px solid rgba(116, 191, 197, .1);
@@ -201,6 +208,7 @@ main {
   width: 100%;
 }
 
+/* 버튼메뉴 */
 .main_visual .bottom_btn {
   position: absolute;
   width: 60%;
@@ -215,7 +223,7 @@ main {
   width: 90%;
   height:120px;
   backdrop-filter: blur(6px) saturate(5%);
-  background: var(--grass-bg3);
+  background: var(--glass-bg3);
   border-right: 1px solid rgba(255, 255, 255, 0.4);
   border-top: 1px solid rgba(116, 191, 197, .35);
   border-left: 1px solid rgba(116, 191, 197, .1);
@@ -240,7 +248,7 @@ main {
   opacity: 1;
   transform-origin: center bottom;
   backdrop-filter: blur(25px) saturate(50%);
-  background: var(--grass-bg1);
+  background: var(--glass-bg1);
   border-top: 1px solid rgba(116, 191, 197, .35);
   border-right: 1px solid rgba(255, 255, 255, 0.4);
   border-left: 1px solid rgba(116, 191, 197, .1);
@@ -266,13 +274,10 @@ main {
 
 .main_visual .sub {
   position: relative;
-  background: var(--grass-bg3);
-  width: 616px;
-  height: 550px;
-  border-radius: 200px;
   top: 30vh;
-  right: 6vw;
+  right: 10vw;
   padding: 20px;
+  transform-style: preserve-3d;
 }
 
 .main_visual .sub .txt {
@@ -282,133 +287,481 @@ main {
   top: 262px;
   left: 63px;
   color: var(--gray-09);
-  background: var(--grass-bg1);
   align-items: center;
   justify-content: center;
   text-align: center;
   border-radius: 50%;
   display: flex;
   flex-direction: column;
-  /* gap: 4px; */
+  background: linear-gradient(rgba(43, 207, 161, .18), rgba(116, 191, 197, .25)), linear-gradient(to top right, rgba(116, 191, 197, .25), rgba(253, 255, 199, .15));
+  background-blend-mode: overlay;
+  box-shadow: var(--ball_shadow);
+  text-shadow: var(--font_B);
+  backdrop-filter: blur(05px) saturate(50%);
+  border-top: 1px solid rgba(255, 255, 255, .2);
+  border-bottom: 1px solid rgba(255, 255, 255, .15);
+  border-left: 1px solid linear-gradient(rgba(43, 207, 161, .18));
+  z-index: 30;
 }
 
 .main_visual .sub .txt>h3{
-  display: inline-flex;
+  font-weight: 200;
 }
 
 .main_visual .sub .txt strong {
   font-size: 1.1rem;
   font-weight: 600;
+  
 }
-.main_visual .sub .txt>span{
+.main_visual .sub .txt span{
   font-size: 1.1rem;
   font-weight: 200;
 }
 
 .ball_all{
-
+  background: var(--glass-bg3);
+  width: 616px;
+  height: 550px;
+  border-radius: 200px;
+  perspective: 800px;
+  transform: rotate();
+  box-shadow: var(--ball_shadow);
+  z-index: 30;
 }
+ 
 
-
-
-
-.pick_section {
-  padding: 86px 0 120px;
-}
-
-.pick_section::before {
-  content: '';
+.ball_all .ball{
   position: absolute;
-  left: 50%;
-  top: 28px;
-  transform: translateX(-50%);
-  width: min(1200px, calc(100% - 80px));
-  height: 430px;
+  width: 170px;
+  height: 170px;
   border-radius: 50%;
-  background: radial-gradient(circle 50% 42%, #eef0ed 0%, #e4e7e3 58%, #dfe4e3 100%);
+  background: var(--glass-bg2);
+  box-shadow: var(--ball_shadow);
+  backdrop-filter: blur(25px) saturate(50%);
+  border-top: 1px solid rgba(255, 255, 255, .2);
+  border-bottom: 1px solid rgba(255, 255, 255, .15);
+  border-left: 1px solid linear-gradient(rgba(43, 207, 161, .18));
+}
+
+.ball_all .ball:nth-child(2){
+  top: 244px;
+  left: 162px;
+  z-index: 16;
+  animation: ball_ani 5s .1s ease-in infinite;
+}
+
+.ball_all .ball:nth-child(3){
+  top: 238px;
+  left: 28px;
+  z-index: 17;
+  animation: ball_ani 5s .3s ease-in infinite;
+}
+.ball_all .ball:nth-child(4){
+  top: 347px;
+  left: 231px;
+  z-index: 18;
+  animation: ball_ani 4.5s .9s ease-out infinite;
+
+}
+.ball_all .ball:nth-child(5){
+  top: 109px;
+  left: 70px;
+  z-index: 19;
+  animation: ball_ani 5s .85s ease-out infinite;
+
+}
+.ball_all .ball:nth-child(6){
+  top: 262px;
+  left: 401px;
+  z-index: 20;
+  animation: ball_ani 4s .4s ease-in-out infinite;
 
 }
 
-.pick_section .inner {
+@keyframes ball_ani {
+  0%   { transform: translateY(0px); }
+  50%  { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+
+.main_visual .sub .ball_all>.num_txt{
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  top: 37px;
+  left: 253px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 30px;
+  color: var(--gray-09);
+  background: linear-gradient(rgba(43, 207, 161, .18), rgba(116, 191, 197, .25)), linear-gradient(to right, rgba(116, 191, 197, .25), rgba(253, 255, 199, .15));
+  background-blend-mode: overlay;
+  box-shadow: var(--ball_shadow);
+  text-shadow: var(--font_B);
+  backdrop-filter: blur(05px) saturate(50%);
+  border-top: 1px solid rgba(255, 255, 255, .2);
+  border-bottom: 1px solid rgba(255, 255, 255, .15);
+  border-left: 1px solid linear-gradient(rgba(43, 207, 161, .18));
+  z-index: 50;
+}
+
+.main_visual .sub .ball_all>.num_txt p{
+font-size: 1.3rem;
+font-weight: 400;
+}
+
+.main_visual .sub .ball_all>.num_txt span{
+font-size: 1.8rem;
+font-weight: 500;
+}
+
+.main_visual .sub .ball_all>.num_txt strong{
+  font-size: 1.7rem;
+  font-weight: 500;
+  letter-spacing: -2%;
+}
+/* 카드선택부분 */
+.pick{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  padding: 120px 0 120px;
+  overflow: hidden;
+}
+
+
+.pick .inner {
+  width: 100%;
+  min-width: 1440px;
+  height: 100%;
+  transform-style: preserve-3d;
+  flex: 1;
   position: relative;
   z-index: 1;
+  padding: 100px 0;
 }
 
-.pick_tabs {
+.pick .inner .card_all {
+  width: 80%;
+  min-width: 1400px;
+  height: 100%;
+  justify-content: center;
+  display: flex;
+  padding: 200px;
+  }
+
+.pick .inner .card_all .swiper-wrapper{
+  width: 100%;
+  height: 100%;
+  
+}
+
+.pick .inner .card_all .swiper-wrapper .card{
+  width: 337px;
+  height: 650px;
+  padding: 24px;
+  border-radius: var(--round);
+  background: var(--glass-bg3);
+  box-shadow: var(--ball_shadow);
+  backdrop-filter: blur(50px) saturate(50%);
+  border-top: 1px solid radial-gradient(rgba(43, 207, 161, .18), rgba(116, 191, 197, .25));
+  border-right: 1px solid rgba(255, 255, 255, 0.4);
+  border-left: 1px solid rgba(116, 191, 197, .1);
+  position: relative;
+  color: var(--gray-09);
+}
+
+
+.pick .inner .card_all  .swiper-wrapper .card>ul{
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.pick .inner .card_all .swiper-wrapper .card .title{
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* 추첨날짜 */
+.pick .inner .card_all .swiper-wrapper .card .date{
+  width: 100%;
+  height: 80px;
   display: flex;
   justify-content: center;
-  gap: 10px;
-  padding-bottom: 24px;
+  padding: 8px 0;
+  align-items: center;
 }
 
-.pick_tabs button {
-  padding: 9px 16px;
-  border-radius: 999px;
-  background: #fff;
-  color: #3f4c4f;
-  border: 1px solid #d8dfdf;
-  font-size: .92rem;
+
+.pick .inner .card_all .swiper-wrapper .card .date p{
+  align-items: end;
+  font-size: 32px;
+  font-weight: 400;
 }
 
-.pick_tabs button.on {
-  background: #4acfb0;
-  color: #fff;
-  border-color: transparent;
+.pick .inner .card_all .swiper-wrapper .card .date p:nth-child(2){
+  font-size: 18px;
+  padding: 0 4px;
 }
 
-.pick_wrap {
+/* 당첨번호 */
+.pick .inner .card_all .swiper-wrapper .card .win_num{
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 0;
+  /* flex: 1; */
+}
+
+.pick .inner .card_all .swiper-wrapper .card .win_num>p{
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  justify-content: center;
+  align-content: center;
+  background: var(--w-color);
+  font-size: 34px;
+  border-radius: var(--round);
+}
+
+/* +부분 */
+.pick .inner .card_all .swiper-wrapper .card .win_num>.plus{
+  border-radius: none;
+  background: none;
+}
+
+
+/* 카드 상세정보 부분 */
+.pick .inner .card_all .swiper-wrapper .card .info_txt{
+  width: 100%;
+  height: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  border-radius: 400px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: var(--glass-bg2);
+  box-shadow: var(--ball_shadow);
+  backdrop-filter: blur(25px) saturate(50%);
+  border-top: 1px solid radial-gradient(rgba(43, 207, 161, .18), rgba(116, 191, 197, .25));
+  border-right: 1px solid rgba(255, 255, 255, 0.4);
+  border-left: 1px solid rgba(116, 191, 197, .1);
+  padding:  70px 0px 70px 0px;
+  transition: padding .6s;
+  gap: 24px;
+}
+
+.pick .inner .card_all .swiper-wrapper .card .info_txt:hover .more_hidden{
+  transform-origin: bottom bottom;
+  flex: 1;
+  opacity: 1;
+  display: flex;
+  gap: 24px 0;
+  padding: 0px 80px 0px 80px;
+
+}
+
+.pick .inner .card_all .swiper-wrapper .card .info_txt .winner{
+  flex-direction: column;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+
+}
+
+.pick .inner .card_all .swiper-wrapper .card .info_txt .winner .tit{
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  padding: 8px;
+}
+
+.pick .inner .card_all .swiper-wrapper .card .info_txt .winner .tit>p {
+  font-size: 14px;
+}
+
+.pick .inner .card_all .swiper-wrapper .card .info_txt .winner>.num_txt,
+.pick .inner .card_all .swiper-wrapper .card .info_txt .more_hidden .bonus>.num_txt,
+.pick .inner .card_all .swiper-wrapper .card .info_txt .more_hidden .price>.num_txt{
+  font-size: 32px;
+  font-weight: 500;
+}
+
+.pick .inner .card_all .swiper-wrapper .card .info_txt .more_hidden .bonus>.num_txt{
+  display: flex;
+  padding: 8px;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.pick .inner .card_all .swiper-wrapper .card .info_txt .more_hidden{
+  flex: 1;
+  width: 100%;
+  height: 100%  ; 
+  opacity: 0;
+  display: none;
+  flex-direction: column;
+  padding:  80px 80px 80px 80px;
+
+
+}
+
+.pick .inner .card_all .swiper-wrapper .card .info_txt .more_hidden .bonus,
+.pick .inner .card_all .swiper-wrapper .card .info_txt .more_hidden .price{
+  display: none;
+  flex-direction: column; 
+  flex: 1;
+
+}
+
+.pick .inner .card_all .swiper-wrapper .card .info_txt:hover .bonus,
+.pick .inner .card_all .swiper-wrapper .card .info_txt:hover .price{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
+}
+
+/* 카드 하단 버튼  */
+.pick .inner .card_all .swiper-wrapper .card .more{
+  width: 100%;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 20px;
 }
 
-.pick_nav {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  border: 0;
-  background: transparent;
-  color: #1ec19a;
-  font-size: 1.85rem;
+.pick .inner .card_all .swiper-wrapper .card .more .more_btn{
+  flex: 1;
+  background: var(--w-color);
+  padding: 18px 20px;
+  text-align: center;
+  border-radius: var(--round);
+  border: 1px solid var(--b-color);
 }
 
-.pick_cards {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 14px;
-  width: min(760px, 100%);
+.pick .inner .card_all .swiper-wrapper .card .more .buy_btn{
+  flex: 1;
+  padding: 18px 20px;
+  text-align: center;
+  background: var(--main-color5);
+  color: var(--w-color);
+  border-radius: var(--round);
+
 }
 
-.pick_cards article {
-  min-height: 176px;
-  border-radius: 12px;
-  padding: 16px;
-  background: linear-gradient(180deg, #f5f6ef 0%, #e2ece8 100%);
-  border: 1px solid #d5dfde;
+/* 카드배경 */
+.pick .inner .card_all .swiper-wrapper .card .bg{
+  position: absolute;
+  width: 90%;
+  height: 100%;
+  z-index: -20;
+  justify-content: center;
+  align-items: center;
+}
+
+.pick .inner .card_all .swiper-wrapper .card .bg p{
+  width: 100%;
+  height: 100%;
+  flex: 1;
+  text-align: center;
+  font-weight: 700;
+  font-size: 180px;
+  color: var(--main-color5);
+  opacity: .18;
+  padding: 80px 0;
+}
+
+/* 양쪽화살표버튼 */
+.pick .inner .arrow_btn{
+  position: absolute;
+  width:100%;
+  padding: 24px;
+  flex: 1;
+  top:  43%;
+  z-index: 80;
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
-}
-
-.pick_cards article p {
-  color: #637275;
-  font-size: .86rem;
-}
-
-.pick_cards article strong {
-  color: #39bfa0;
-  font-size: 2rem;
-  letter-spacing: 2px;
-}
-
-.pick_cards article span {
-  color: #2b3d41;
-  font-weight: 600;
+  pointer-events: none;
 }
 
 
 
+
+.pick .inner .arrow_btn .swiper_button_next{
+  right: 0;
+  color: var(--w-color);
+  font-size: 4rem;
+  text-shadow: var(--ball_shadow);
+  z-index: 80;
+  pointer-events: all;
+  cursor: pointer;
+}
+.pick .inner .arrow_btn .swiper_button_next:hover,
+.pick .inner .arrow_btn .swiper_button_prev:hover{
+  color: var(--main-color5);
+  font-size: 4.2rem;
+}
+.pick .inner .arrow_btn .swiper_button_prev{
+  left: 0;
+  top: 50%;
+  color: var(--w-color);
+  font-size: 4rem;
+  text-shadow: var(--ball_shadow);
+  pointer-events: all;
+  cursor: pointer;
+
+}
+
+/* 선택창 배경 */
+
+.pick_bg{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  z-index: -80;
+  pointer-events: none;
+}
+
+.pick_bg .bg_ball{
+  top: -40px;
+  right: 1vw;
+  width: 1300px;
+  height: 1300px;
+  position: absolute;
+  display: block;
+  background: repeating-radial-gradient(circle at 0 0, rgba(0,0,0,.06) 0 1px, transparent 2px 4px);
+  z-index: -60;
+  pointer-events: none;
+  border-radius: 50%;
+  transform: rotate(-180deg);
+
+}
+
+
+.pick_bg .bg_ball:nth-child(2){
+  left:0;
+  transform: rotate(0deg);
+} */
 /* 인터뷰  */
 .winner_section{
   width: 100%;
@@ -500,6 +853,7 @@ main {
   font-weight:700;
   color:var(--gray-10);
 }
+
 /* 메뉴버튼 */
 .winner_section>.inner>.winner_interview .txt_box>.menu_btn{
   display:flex;
@@ -762,7 +1116,6 @@ main {
   color: #4b5960;
   font-size: .75rem;
 }
-
 /* marquee_section */
 
 .marquee_section{
@@ -771,11 +1124,13 @@ main {
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
-  background-image: linear-gradient(to bottom, #d8cdc9, #eeedf0, var(--primary-color));
   background: var(--w-color);
-  padding: 20px 0 0 0 ;
+  padding: 18px 0;
 }
 
+.marquee_section h2{
+  color: var(--card);
+}
 
 .marquee_wrap{
   display: flex;

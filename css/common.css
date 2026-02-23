@@ -12,9 +12,9 @@ border-top: 1px solid rgba(255, 255, 255, .2);
 border-bottom: 1px solid rgba(255, 255, 255, .15);
 border-left: 1px solid linear-gradient(rgba(43, 207, 161, .18)); */
 
-/* grass */
+/* glass */
 /* backdrop-filter: blur(15px) saturate(50%);
-background: var(--grass-bg1);
+background: var(--glass-bg1);
 border-top: 1px solid radial-gradient(rgba(43, 207, 161, .18), rgba(116, 191, 197, .25));
 border-right: 1px solid rgba(255, 255, 255, 0.4);
 border-left: 1px solid rgba(116, 191, 197, .1);
@@ -29,10 +29,10 @@ color: var(--w-color); */
   --main-color3: #A6BFC5;
   --main-color4: #FDFFC7;
   --main-color5: #2BCFA1;
-  /* --grass-bg1: radial-gradient(rgba(43, 207, 161, .18), rgba(116, 191, 197, .25)); */
-  --grass-bg1: radial-gradient(rgba(222, 241, 230, .4), rgba(138, 22, 118, 0.082));
-  --grass-bg2: rgba(116, 191, 197, .25);
-  --grass-bg3: rgba(253, 255, 199, .25);
+  /* --glass-bg1: radial-gradient(rgba(43, 207, 161, .18), rgba(116, 191, 197, .25)); */
+  --glass-bg1: radial-gradient(rgba(222, 241, 230, .4), rgba(138, 22, 118, 0.082));
+  --glass-bg2: rgba(116, 191, 197, .25);
+  --glass-bg3: rgba(253, 255, 199, .25);
   --w-color: #fff;
   --gray-01: #f6f6f6;
   --gray-02: #eeeeee;
@@ -51,6 +51,7 @@ color: var(--w-color); */
   --pretenderd-: "Pretendard";
   --round: 24px;
   --ball_shadow: 0 0 5px rgba(0,0,0,.2);
+  --bg-ball: radial-gradient(84% 84% at 50% 16%, rgba(166, 191, 197, 0.20) 50%, rgba(166, 191, 197, 0.00) 100%);
 }
 
 * {
@@ -66,8 +67,7 @@ body {
   font-family: 'SUITE Variable', sans-serif, 'Pretendard';
 }
 
-
-.wrap>.vid {
+.wrap>.bg {
   position: fixed;
   width: 100%;
   height: 100%;
@@ -75,6 +75,7 @@ body {
   top: 0;
   background: #FEF8F2;
   pointer-events: none;
+  z-index: -100;
 }
 
 .inner {
@@ -91,7 +92,7 @@ header {
   position: fixed;
   right: 0;
   top: 0;
-  background-color: var(--grass-bg2);
+  background-color: var(--glass-bg2);
   display: flex;
   transition: .3s;
   z-index: 10;
@@ -118,7 +119,7 @@ header.on::before {
 }
 
 header>.inner {
-  width: 100%;
+  flex: 1;
   min-width: 1600px;
   display: flex;
   justify-content: center;
@@ -224,7 +225,7 @@ header nav .gnb>li>.gnb_dp2>li>a {
   justify-content: center;
   border-radius: var(--round);
   backdrop-filter: blur(15px) saturate(13%);
-  background: var(--grass-bg3);
+  background: var(--glass-bg3);
   border-right: 1px solid rgba(255, 255, 255, 0.4);
   border-left: 1px solid rgba(116, 191, 197, .1);
   box-shadow: var(--ball_shadow);
@@ -288,7 +289,7 @@ header .right .ham_icon li {
 header.on {
   width: 100%;
   height: 70px;
-  background-color: var(--grass-bg1);
+  background-color: var(--glass-bg1);
   transform: scale(1);
 }
 
@@ -450,7 +451,7 @@ header .ham_menu .container .list>li>.dp2>li>.tit>a:nth-child(2){
 }
 
 header .ham_menu .container .list>li>.dp2>li>.tit>a.buy{
-  background: var(--grass-bg1);
+  background: var(--glass-bg1);
 }
 header .ham_menu .container .list>li>.dp2>li>.dp3{
   flex-direction: row;
@@ -481,15 +482,22 @@ header .ham_menu .container .list>li>.dp2>li>.dp3 a:hover{
 /* footer */
 
 footer{
-  width: 100%;
-  padding: 24px 0 100px;
-  color: var(--grass-bg1);
-  text-shadow: var(--font_W);
+flex: 1;
+padding: 24px;
 }
+
 footer>.inner{
-  background: var(--grass-bg2);
   border-radius: var(--round);
   padding: 24px;
+  color: var(--glass-bg1);
+  text-shadow: var(--font_W);
+   /* background-color: rgba(255,255,255,.18); */
+  background: linear-gradient(rgba(43, 207, 161, .18), rgba(116, 191, 197, .25)), linear-gradient(to right, rgba(116, 191, 197, .25), rgba(253, 255, 199, .15));
+  background-blend-mode: overlay;
+  border-bottom: 1px solid rgba(255, 255, 255, .15);
+  text-shadow: var(--font_B);
+  backdrop-filter: blur(5px) saturate(50%);
+  -webkit-backdrop-filter: blur(5px) saturate(50%);
 }
 footer .f_top {
   display: flex;
@@ -520,7 +528,7 @@ footer .logo_box .logo_b {
 }
 
 footer .btn_box a{
-  background: var(--grass-bg2);
+  background: var(--glass-bg2);
   box-shadow: var(--font_W);
   transition: .2s;
   color: var(--gray-08);
@@ -601,14 +609,16 @@ footer .f_con1 span:first-child {
   padding-right: .8em;
   border-right: 1px solid var(--gray-07);
 }
+
 footer .f_left>li a{
-  background: var(--grass-bg2);
+  background: var(--glass-bg2);
   padding: 2px 8px;
   border-radius: var(--round);
   text-shadow: var(--font_W);
   border-top: 1px solid rgba(255, 255, 255, .6);
   border-bottom: 1px solid rgba(255, 255, 255, .4);
 }
+
 footer .f_right {
   text-align: right;
 }

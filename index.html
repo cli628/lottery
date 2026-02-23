@@ -8,7 +8,6 @@
   <meta name="author" content="Lee Gye Jeong">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>lottery</title>
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="shortcut icon" href="asset/img/favicon.ico" type="image/x-icon">
   <link href="https://cdn.jsdelivr.net/gh/sun-typeface/SUITE@2/fonts/variable/woff2/SUITE-Variable.css"
     rel="stylesheet">
@@ -16,19 +15,29 @@
     href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
   <script src="https://kit.fontawesome.com/193fa424cf.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollTrigger.min.js"></script>
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/common.css">
   <link rel="stylesheet" href="css/common_media.css">
   <link rel="stylesheet" href="css/main.css">
   <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="js/common.js"></script>
   <script src="js/main.js"></script>
 </head>
 
 <body>
   <div class="wrap">
-    <figure class="vid"></figure>
+    <section class="bg">
+      <div class="vid_ball1"></div>
+      <div class="vid_ball2"></div>
+      <div class="vid_ball3"></div>
+      <div class="vid_ball4"></div>
+      <div class="vid_ball5"></div>
+      <div class="vid_ball6"></div>
+      <div class="vid_ball7"></div>
+      <div class="vid_ball8"></div>
+    </section>
     <header>
       <div class="inner">
         <h1><a href="#">동행복권</a></h1>
@@ -424,7 +433,7 @@
                 <div class="txt_area">
                   <div class="tit">
                     <h2>로또 6/45,</h2>
-                    <em>이제는 <strong>모바일웹</strong> 에서도</em>
+                    <p><em>이제는 <strong>모바일웹</strong> 에서도</em></p>
                   </div><!-- //.tit -->
                   <div class="txt">
                     <p>PC 없이도 OK! 앱 설치없이 모바일로 간편하게 로또6/45를 구매하세요</p>
@@ -438,14 +447,14 @@
               </div>
               <div class="swiper-slide">
                 <div class="txt_area">
-                  <div class="sub_txt"></div>
                   <div class="tit">
                     <h2>연금복권 720+</h2>
                     <em>PC/모바일/판매점 <strong>모두</strong> 구매가능!</em>
                   </div>
                   <div class="txt">
+                    <p>
                     <strong>1등</strong>
-                    <em>월<strong>700만원</strong>씩<strong>20년</strong>간 지급</em>
+                    월<strong>700만원</strong>씩<strong>20년</strong>간 지급</p>
                   </div><!-- //.txt -->
                   <div class="more_btn">
                     <a href="#" class="more">
@@ -464,7 +473,6 @@
               </div>
               <div class="swiper-slide">
                 <div class="txt_area">
-                  <div class="sub_txt"></div>
                   <div class="tit">
                     <h2>복권기금</h2>
                     <em>아이디어</em><strong>공모전</strong>
@@ -481,7 +489,6 @@
               </div>
               <div class="swiper-slide">
                 <div class="txt_area">
-                  <div class="sub_txt"></div>
                   <div class="tit">
                     <h2>'복똑방'</h2>
                     <em>신규 <strong>모바일 앱</strong> 오픈 안내</em>
@@ -498,7 +505,6 @@
               </div>
               <div class="swiper-slide">
                 <div class="txt_area">
-                  <div class="sub_txt"></div>
                   <div class="tit">
                     <h2>로또복권 및 인터넷 판매</h2>
                     <em>모바일 앱 <strong>이용시간 안내</strong></em>
@@ -510,8 +516,8 @@
                 </div>
               </div>
             </div>
-          </div>
-          </div>
+          </div><!-- //.swiper //.top_sw -->
+          </div><!-- //.slide -->
           <div class="swiper bottom_btn">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
@@ -540,33 +546,335 @@
               </button>
             </div>
           </div>
-          </div>
-          <div class="pager">
+          </div><!-- //.swiper //.bottom_btn -->
+          <!-- <div class="pager">
           <div class="right swiper-button-next"></div>
           <div class="left swiper-button-prev"></div>
-          </div>
+          </div> -->
         </div><!-- //. inner-->
         <div class="sub">
-          <div class="txt">
-            <h3><p>판매액의</p>
-            <strong>40%</strong><p>가</p></h3>
-            <span>소외계층에</span>
-            <p>사용되고 있습니다.</p>
-          </div><!-- //.txt -->
           <div class="ball_all">
-            <div class="ball1"></div>
-            <div class="ball2"></div>
-            <div class="ball3"></div>
-            <div class="ball4"></div>
-            <div class="ball5"></div>
-            <div class="num_txt">
-              <p>올 해의</p>
-              <span>복권기금</span>
-              <strong>166,439,507,143원</strong>
-          </div>
+            <div class="txt">
+              <h3>판매액의<strong>40%</strong>가</h3>
+              <p><span>소외계층에</span></p>
+              <p>사용되고 있습니다.</p>
+            </div><!-- //.txt -->
+              <div class="ball"></div>
+              <div class="ball"></div>
+              <div class="ball"></div>
+              <div class="ball"></div>
+              <div class="ball"></div>
+              <div class="num_txt">
+                <p>올 해의</p>
+                <p><span>복권기금</span></p>
+                <p><strong>166,439,507,143원</strong></p>
+              </div><!-- //.num_txt -->
           </div><!-- //.ball_all -->
         </div><!-- //.sub -->
       </div><!-- //.main_visual -->
+      <section class="pick">
+        <div class="inner">
+          <div class="swiper-pagination">
+            <div class="tit">
+              <p>언제나, 어디서나 함께하는 행운</p>
+              <h2>추첨식 복권중에 골라보세요</h2>
+            </div>
+              <ul class="btn_all">
+                <li><button type="button">추첨식</button></li>
+                <li><button type="button">즉석식</button></li>
+                <li><button type="button">스피또</button></li>
+              </ul><!-- //.btn_all -->
+            </div><!-- //.swiper-pagination -->
+          <div class="swiper card_all">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide card lotto">
+                <ul>
+                  <li class="title">
+                      <p>1210회</p>
+                      <p>로또 6/45</p>
+                  </li><!-- //.title -->
+                  <li class="date">
+                    <p>2026.01.17</p>
+                    <p>22:29</p>
+                  </li><!-- date -->
+                  <li class="win_num">
+                    <p>1</p>
+                    <p>7</p>
+                    <p>9</p>
+                    <p>17</p>
+                    <p>27</p>
+                    <p>38</p>
+                    <p class="plus">+</p>
+                    <p>31</p>
+                  </li><!-- //.win_num -->
+                  <li class="info_txt">
+                      <div class="winner">
+                        <div class="tit">
+                          <p>1등 당첨금</p>
+                          <p>(24명/11.0억)</p>
+                        </div><!-- //.tit -->
+                        <div class="num_txt">
+                          <p>264.6억원</p>
+                        </div><!-- //.mum_txt -->
+                      </div><!-- //.winner -->
+                      <div class="more_hidden">
+                        <div class="bonus">
+                          <div class="tit">
+                            <p>보너스</p>
+                          </div><!-- //.tit -->
+                          <div class="num_txt">
+                            <p>296.6억원</p>
+                          </div><!-- //.num_txt -->
+                        </div><!-- //.bonus -->
+                        <div class="price">
+                          <div class="tit">
+                            <p>실시간 1등 누적 당첨금</p>
+                          </div><!-- //.tit -->
+                          <div class="num_txt">
+                            <p>64,340,996원</p>
+                          </div><!-- //.mum_txt -->
+                        </div><!-- //.price -->
+                      </div><!-- //.more_hidden -->
+                  </li><!-- //.info_txt -->
+                  <li class="more">
+                    <div class="more_btn">
+                      <a href="#"><span>추첨결과 상세</span></a></div><!-- //.more_btn -->
+                    <div class="buy_btn">
+                      <a href="#"><span>바로 구매</span></a>
+                    </div><!-- //.buy_btn -->
+                  </li><!-- //.more -->
+                  <li class="bg">
+                    <p>추첨식</p>
+                  </li><!-- //.bg -->
+              </ul>
+              </div><!-- //.swiper-slide //.card -->
+              <div class="swiper-slide card power">
+                <ul>
+                  <li class="title">
+                      <p>302회</p>
+                      <p>연금복권720+</p>
+                  </li><!-- //.title -->
+                  <li class="date">
+                    <p>2026.02.12</p>
+                  </li><!-- date -->
+                  <li class="win_num">
+                    <p>4조</p>
+                    <p>7</p>
+                    <p>4</p>
+                    <p>8</p>
+                    <p>5</p>
+                    <p>5</p>
+                    <p>9</p>
+                  </li><!-- //.win_num -->
+                  <li class="info_txt">
+                      <div class="winner">
+                        <div class="tit">
+                          <p>1등 당첨금</p>
+                        </div><!-- //.tit -->
+                        <div class="num_txt">
+                          <p>월 700만원 x 20년</p>
+                        </div><!-- //.mum_txt -->
+                      </div><!-- //.winner -->
+                      <div class="more_hidden">
+                        <div class="bonus">
+                          <div class="tit">
+                            <p>보너스</p>
+                          </div><!-- //.tit -->
+                          <div class="num_txt">
+                            <p>각 조</p>
+                            <p>8</p>
+                            <p>1</p>
+                            <p>2</p>
+                            <p>0</p>
+                            <p>2</p>
+                            <p>9</p>
+                          </div><!-- //.num_txt -->
+                        </div><!-- //.bonus -->
+                      </div><!-- //.more_hidden -->
+                  </li><!-- //.info_txt -->
+                  <li class="more">
+                    <div class="more_btn">
+                      <a href="#"><span>추첨결과 상세</span></a></div><!-- //.more_btn -->
+                    <div class="buy_btn">
+                      <a href="#"><span>바로 구매</span></a>
+                    </div><!-- //.buy_btn -->
+                  </li><!-- //.more -->
+                  <li class="bg">
+                    <p>추첨식</p>
+                  </li><!-- //.bg -->
+              </ul>
+              </div><!-- //.swiper-slide //.card -->
+              <div class="swiper-slide card lotto720">
+                <ul>
+                  <li class="title">
+                      <p>1445135회</p>
+                      <p>파워볼</p>
+                  </li><!-- //.title -->
+                  <li class="date">
+                    <p>2026.02.01 </p>
+                    <p>13:59</p>
+                  </li><!-- date -->
+                  <li class="win_num">
+                    <p>5</p>
+                    <p>8</p>
+                    <p>9</p>
+                    <p>14</p>
+                    <p>16</p>
+                  </li><!-- //.win_num -->
+                  <li class="info_txt">
+                      <div class="winner">
+                        <div class="tit">
+                          <p>1등 당첨금</p>
+                        </div><!-- //.tit -->
+                        <div class="num_txt">
+                          <p>54,480,470원</p>
+                        </div><!-- //.mum_txt -->
+                      </div><!-- //.winner -->
+                      <div class="more_hidden">
+                        <div class="price">
+                          <div class="tit">
+                            <p>실시간 1등 누적 당첨금</p>
+                          </div><!-- //.tit -->
+                          <div class="num_txt">
+                            <p>72,726,956원</p>
+                          </div><!-- //.mum_txt -->
+                        </div><!-- //.price -->
+                      </div><!-- //.more_hidden -->
+                  </li><!-- //.info_txt -->
+                  <li class="more">
+                    <div class="buy_btn">
+                      <a href="#"><span>바로 구매</span></a>
+                    </div><!-- //.buy_btn -->
+                  </li><!-- //.more -->
+                  <li class="bg">
+                    <p>추첨식</p>
+                  </li><!-- //.bg -->
+              </ul>
+              </div><!-- //.swiper-slide //.card -->
+              <div class="swiper-slide card speed">
+                <ul>
+                  <li class="title">
+                      <p>1508764회</p>
+                      <p>스피드키노</p>
+                  </li><!-- //.title -->
+                  <li class="date">
+                    <p>2026.01.17</p>
+                    <p>22:29</p>
+                  </li><!-- date -->
+                  <li class="win_num">
+                    <p>2</p>
+                    <p>4</p>
+                    <p>5</p>
+                    <p>6</p>
+                    <p>8</p>
+                    <p><i class="fa-solid fa-ellipsis"></i></p>
+                  </li><!-- //.win_num -->
+                  <li class="info_txt">
+                      <div class="winner">
+                        <div class="tit">
+                          <p>1등 당첨금</p>
+                        </div><!-- //.tit -->
+                        <div class="num_txt">
+                          <p>65,619,120원</p>
+                        </div><!-- //.mum_txt -->
+                      </div><!-- //.winner -->
+                      <div class="more_hidden">
+                        <div class="bonus">
+                          <div class="tit">
+                            <p>보너스</p>
+                          </div><!-- //.tit -->
+                          <div class="num_txt">
+                            <p>296.6억원</p>
+                          </div><!-- //.num_txt -->
+                        </div><!-- //.bonus -->
+                        <div class="price">
+                          <div class="tit">
+                            <p>실시간 1등 누적 당첨금</p>
+                          </div><!-- //.tit -->
+                          <div class="num_txt">
+                            <p>145,921,093원</p>
+                          </div><!-- //.mum_txt -->
+                        </div><!-- //.price -->
+                      </div><!-- //.more_hidden -->
+                  </li><!-- //.info_txt -->
+                  <li class="more">
+                    <div class="more_btn">
+                      <a href="#"><span>번호 전체보기</span></a></div><!-- //.more_btn -->
+                    <div class="buy_btn">
+                      <a href="#"><span>바로 구매</span></a>
+                    </div><!-- //.buy_btn -->
+                  </li><!-- //.more -->
+                  <li class="bg">
+                    <p>추첨식</p>
+                  </li><!-- //.bg -->
+              </ul>
+              </div><!-- //.swiper-slide //.card -->
+              <div class="swiper-slide card mega">
+                <ul>
+                  <li class="title">
+                      <p>954205회</p>
+                      <p>메가빙고</p>
+                  </li><!-- //.title -->
+                  <li class="date">
+                    <p>2026.02.08</p>
+                    <p>13:35</p>
+                  </li><!-- date -->
+                  <li class="win_num">
+                    <p>2</p>
+                    <p>3</p>
+                    <p>5</p>
+                    <p>6</p>
+                    <p>7</p>
+                    <p><i class="fa-solid fa-ellipsis"></i></p>
+                  </li><!-- //.win_num -->
+                  <li class="info_txt">
+                      <div class="winner">
+                        <div class="tit">
+                          <p>1등 당첨금</p>
+                          <p>(24명/11.0억)</p>
+                        </div><!-- //.tit -->
+                        <div class="num_txt">
+                          <p>20,609,210원</p>
+                        </div><!-- //.mum_txt -->
+                      </div><!-- //.winner -->
+                      <div class="more_hidden">
+                        <div class="price">
+                          <div class="tit">
+                            <p>실시간 1등 누적 당첨금</p>
+                          </div><!-- //.tit -->
+                          <div class="num_txt">
+                            <p>22,656,509원</p>
+                          </div><!-- //.mum_txt -->
+                        </div><!-- //.price -->
+                      </div><!-- //.more_hidden -->
+                  </li><!-- //.info_txt -->
+                  <li class="more">
+                    <div class="more_btn">
+                      <a href="#"><span>번호 전체보기</span></a></div><!-- //.more_btn -->
+                    <div class="buy_btn">
+                      <a href="#"><span>바로 구매</span></a>
+                    </div><!-- //.buy_btn -->
+                  </li><!-- //.more -->
+                  <li class="bg">
+                    <p>추첨식</p>
+                  </li><!-- //.bg -->
+              </ul>
+              </div><!-- //.swiper-slide //.card -->
+            </div><!-- //.swiper-wrapper -->
+            <div class="swiper-scrollbar">
+              
+            </div><!-- //.swiper-scrollbar -->
+          </div><!-- //.swiper card_all -->
+          <div class="arrow_btn">
+            <div class="swiper_button_prev"><i class="fa-solid fa-chevron-left"></i></div>
+            <div class="swiper_button_next"><i class="fa-solid fa-chevron-right"></i></i></div>
+          </div><!-- //.arrow_btn -->
+        </div><!-- //.inner -->
+        <div class="pick_bg">
+          <div class="bg_ball"></div>
+          <div class="bg_ball"></div>
+        </div><!-- //.pick_bg -->
+      </section><!-- //.pick -->
       <section class="winner_section">
         <div class="inner">
           <div class="tit">

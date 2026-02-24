@@ -1,23 +1,32 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   /* jsap */
-  /* gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger);
 
-  gsap.to('.pick_section ', {
-	  trigger: '.tit_section',
-		pin: true, 
-		start: 'top top',
-		end: '+=400',
-		scrub: 1, 
-  }); */
+ddocument.querySelectorAll(".faq_section .faq_list>li").forEach((item) => {
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: item,
+      start: "center center",
+      end: "+=200",
+      pin: true,
+      pinSpacing: true,
+      scrub: true,
+      anticipatePin: 1
+    }
+  });
 
+  tl.to(item, { height: 250, paddingTop: 60, paddingBottom: 60, duration: 0.2 })
+    .to(item, { duration: 0.6 })
+    .to(item, { height: 180, paddingTop: 50, paddingBottom: 50, duration: 0.2 });
+});
 
   /* 메인비주얼 */
 const selecter={
   btn:".main_visual>.inner>.bottom_btn",
   main:".main_visual>.inner>.slide>.top_sw",
 };
-
+/* 메인비주얼 하단버튼메뉴 */
 let btnOpt={
   slidesPerView:5,
   watchSlidesProgress:true,
@@ -68,11 +77,10 @@ document.querySelectorAll('.sub').forEach((wrap) => {
   });
 
   wrap.addEventListener('mouseleave', () => {
-    balls.forEach((ball) => {
-      ball.style.transform = `translate(0,0)`;
-    });
-
+  wrap.querySelectorAll('.main_visual .sub').forEach(el => {
+    el.style.transform = '';
   });
+});
 
 });
 
@@ -114,6 +122,7 @@ let swiper = new Swiper(".card_all", {
     },
   coverflowEffect: {
     rotate: -25,
+    
   },
   scrollbar: {
     el: ".swiper-scrollbar",
@@ -147,7 +156,7 @@ function marquee() {
     const rowWidth = row.scrollWidth;
 
     //최소 2세트 이상 복제
-    for(let i=1; i<5; i++){/* 클론 6개 복사 */
+    for(let i=1; i<7; i++){/* 클론 8개 복사 */
       wrap.appendChild(row.cloneNode(true));
     }
     const rows = wrap.querySelectorAll('.marquee_row');

@@ -1,12 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-   // jsap
+  /*  // jsap
   document.addEventListener("DOMContentLoaded", (event) => {
   gsap.registerPlugin(ScrollTrigger)
   // gsap code here!
 
   
-  });
+  }); */
 
 
 

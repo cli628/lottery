@@ -1,15 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   /* jsap */
-  gsap.registerPlugin(ScrollTrigger);
-  // gsap code here!
+  /* gsap.registerPlugin(ScrollTrigger);
+
   gsap.to('.pick_section ', {
 	  trigger: '.tit_section',
 		pin: true, 
 		start: 'top top',
 		end: '+=400',
 		scrub: 1, 
-  });
+  }); */
 
 
   /* 메인비주얼 */

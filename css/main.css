@@ -278,7 +278,7 @@ main {
   bottom: 0;
   width: 90%;
   height: 120px;
-  backdrop-filter: blur(8px) saturate(5%);
+  backdrop-filter: blur(2px) saturate(5%);
   background: var(--glass-bg4);
   border-right: 1px solid rgba(255, 255, 255, 0.4);
   border-top: 1px solid rgba(116, 191, 197, .35);
@@ -339,7 +339,7 @@ main {
 /* sub 공들*/
 .main_visual .sub {
   position: relative;
-  top: 30vh;
+  top: 33vh;
   right: 13vw;
   padding: 20px;
   transform-style: preserve-3d;
@@ -839,13 +839,16 @@ font-weight: 500;
 
 /* 하단 스크롤바 */
 .pick_section .inner .card_all .swiper-scrollbar{
+  display: flex;
   width: 70%;
-  height: 20px;
+  height: 50px;
   align-items: center;
   justify-content: center;
   position: relative;
-  top: 0;
+  bottom:200px;
   left: 0;
+  color: var(--main-color5);
+  background: #222;
 }
 
 
@@ -1334,17 +1337,18 @@ font-weight: 500;
   justify-content: center;
   font-size: 1.5rem;
   background: var(--glass-bg3);
-  /* background-blend-mode: overlay;
-  background-blend-mode: difference; */
+  background-blend-mode: overlay;
+  background-blend-mode: difference;
   box-shadow: 0 0 20px rgba(0, 0, 0, 16%);
   text-shadow: var(--font_B);
-  /* backdrop-filter: blur(05px) saturate(50%); */
+  backdrop-filter: blur(05px) saturate(50%);
   border-top: 1px solid rgba(255, 255, 255, .2);
   border-bottom: 1px solid rgba(255, 255, 255, .15);
   border-left: 1px solid rgba(116, 191, 197, .1);
   z-index: 5;
 }
-.faq_section .inner .tit i{
+
+ .faq_section .inner .tit i{
   font-size: 24px;
   top:0;
   left: 0;
@@ -1371,10 +1375,10 @@ font-weight: 500;
 /* 질문 */
 .faq_section .inner .faq_list>li{
   width: 70%;
-  height: 180px;
+  height: 100%;
   top: 50%;
   left: 0;
-  position: fixed;
+  position: relative;
   border-radius: 0 150px 150px 0 ;
   flex-direction: column;
   align-items: center;
@@ -1394,16 +1398,16 @@ font-weight: 500;
   font-size: 20px;
   color: var(--main-color5);
   cursor: pointer;
-  background:var(--glass-bg1);
+  background: var(--w-color);
 }
 
 /* 질문 호버 */
 .faq_section .inner .faq_list>li:hover{
   width: 90%;
-  height: 250px;
+  height: 100%;
   display: flex;
   box-shadow: 0 0 5px var(--main-color5);
-  justify-content: end;
+  /* background: var(--glass-bg1); */
 }
 
 
@@ -1411,25 +1415,27 @@ font-weight: 500;
   font-size: 24px;
 }
 
-.faq_section .inner .faq_list>li button{
-  cursor: pointer;
+.faq_section .inner .faq_list>li .faq_card{
+  display: flex;
+  flex-direction: column;
+  padding: 24px
+}
 
+.faq_section .inner .faq_list>li .faq_card summary {
+  list-style: none;
 }
-.faq_section .inner .faq_list>li button>i{
-  color: var(--main-color5);
 
-}
-.faq_section .inner .faq_list li button.on>i{
-  transform:rotate(90deg);
-  transition:.3s;
-}
 
 /* 답변 */
 .faq_section .inner .faq_list li .faq_answer{
-  /* width: 100%; */
+  top: 0;
+  left: 0;
+  gap: 4px;
+  position: relative;
   display: flex;
   flex-direction: column;
   color: var(--b-color);
+  padding: 18px;
 }
 
 .faq_section .inner .faq_list li .faq_answer p{
@@ -1437,7 +1443,9 @@ font-weight: 500;
   
 }
 
-
+.faq_section .inner .faq_list li .faq_answer .is_active{
+  background: #222;
+}
 
 
 /* marquee_section */

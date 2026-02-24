@@ -294,6 +294,7 @@ header.on .right a>i{
   color: var(--gray-08);
   transition: .2s;
 }
+
 /* hamicon */
 header.on .right .ham_icon li{
   background-color: var(--gray-08);
@@ -454,17 +455,13 @@ header .ham_menu .container .list>li>.dp2>li>.dp3>li{
 
 header .ham_menu .container .list>li>.dp2>li>.tit>a:hover{
   font-weight: 700;
-  background-color: var(--main-color5);
-  color: var(--w-color);
-  border-radius: var(--round);
+  color: var(--main-color5);
+  text-shadow: var(--font_W);
 }
 
 header .ham_menu .container .list>li>.dp2>li>.dp3 a:hover{
-  padding: 4px 12px;
   font-weight: 600;
-  background-color: var(--main-color5);
-  color: var(--w-color);
-  border-radius: var(--round);
+  color: var(--main-color5);
   text-shadow: var(--font_W);
 }
 

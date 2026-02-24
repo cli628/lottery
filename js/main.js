@@ -1,27 +1,27 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   /* jsap */
-gsap.registerPlugin(ScrollTrigger);
+const cards = document.querySelectorAll('.faq_section .faq_card');
+  if(!cards.length) return;
 
-  document.querySelectorAll(".faq_section .inner .faq_list>li").forEach((item) => {
-    gsap.set(item, { willChange: "transform, height" });
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      const card = e.target;
 
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: item,
-        start: "center 60%",   // 중앙 살짝 아래에서 시작(더 자연스러움)
-        end: "+=200",
-        // pin: true,
-        pinSpacing: true,
-        scrub: true,
-        anticipatePin: 1,
-        // pinType: "transform", 
-      },
-      y: 0
+      if(e.isIntersecting){
+        card.classList.add('is_active');
+        card.open = true;          // ✅ 자동 열기
+      }else{
+        card.classList.remove('is_active');
+        card.open = false;         // ✅ 자동 닫기
+      }
     });
-
-    
+  }, {
+    root: null,
+    threshold: 0
   });
+
+  cards.forEach((c) => io.observe(c));
 
   /* 메인비주얼 */
 const selecter={

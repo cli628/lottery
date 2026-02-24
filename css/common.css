@@ -62,6 +62,7 @@
 body {
   font-family: 'SUITE Variable', sans-serif, 'Pretendard';
 }
+/* 배경색 */
 .wrap>.bg {
   position: fixed;
   width: 100%;
@@ -70,7 +71,6 @@ body {
   top: 0;
   background: var(--main-color3);
   pointer-events: none;
-  z-index: -100;
 }
 
 .inner {
@@ -81,8 +81,8 @@ body {
 }
 
 header {
-  position: fixed;
   width: 100%;
+  position: fixed;
   min-width: 1400px;
   height: 70px;
   right: 0;
@@ -91,7 +91,6 @@ header {
   display: flex;
   transition: .3s;
   z-index: 9999;/* 제일 위에 올라와야함 */
-  transform: translateY(0); /* 미리 올려둠 */
   will-change: transform;
 }
 
@@ -115,13 +114,12 @@ header.on::before {
 }
 
 header>.inner {
+  max-width: 1440px;
+  width: 1440px;
   flex: 1;
-  width: 100%;
-  min-width: 1440px;
   display: flex;
-  justify-content: center;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   flex-shrink: 0;
 }
 
@@ -172,7 +170,7 @@ header nav .gnb>li>.gnb_dp2 {
   flex-direction: column;
   padding: 24px;
   font-size: .889rem;
-  background: var(--glass-bg4);
+  background: var(--glass-bg2);
   background-blend-mode: overlay;
   border-bottom: 1px solid rgba(255, 255, 255, .15);
   text-shadow: var(--font_B);
@@ -327,10 +325,10 @@ header.on .right .ham_icon li:nth-child(3) {
 
 header .ham_menu {
   position: absolute;
-  top: 12px;
-  right: 0;
+  top: 6px;
+  right: 11.5vw;
   width: 1000px;
-  height: 720px;
+  height: 730px;
   transform-origin: top right;
   transform: scale(.06);
   opacity: 0;
@@ -363,7 +361,7 @@ header .ham_menu .container {
   overflow: auto;
   top: 0;
   left: 0;
-
+  overflow: hidden;
 }
 
 header .ham_menu .container::-webkit-scrollbar {

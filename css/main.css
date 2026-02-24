@@ -57,10 +57,9 @@ main {
   padding: 0 0 0 270px;
 }
 
-/* 슬라이드 윗부분+마스크 */
 .main_visual>.inner>.slide>.top_sw {
-  width: 70vw;
-  min-width: 65vw;
+  width: 80vw;
+  min-width: 70vw;
   display: flex;
   flex-direction: column;
   height: 90%;
@@ -68,8 +67,8 @@ main {
   top: 0px;
   
   /* 그라데이션마스크 */
-  -webkit-mask-image: linear-gradient(to right, #000 93%, transparent 100%);
-  mask-image: linear-gradient(to right, #000 93%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, #000 99%, transparent 100%);
+  mask-image: linear-gradient(to right, #000 99%, transparent 100%);
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
   -webkit-mask-size: 100% 100%;
@@ -224,7 +223,7 @@ main {
   border-radius: var(--round);
   gap: 8px;
   font-size: 14px;
-  z-index: 10;
+  z-index: 600;
 
 }
 
@@ -238,6 +237,7 @@ main {
 
 /* 자세히보기 버튼부분 */
 .main_visual .txt_area>.more_btn{
+  display: flex;
   width: 220px;
   height: 45px;
   justify-content: center;
@@ -247,17 +247,14 @@ main {
   border-top: 1px solid rgba(116, 191, 197, .35);
   border-right: 1px solid rgba(255, 255, 255, 0.4);
   border-left: 1px solid rgba(116, 191, 197, .1);
-  box-shadow: var(--ball_shadow);
   text-shadow: var(--font_B);
   color: var(--b-color);
 }
 
-.main_visual .txt_area>.more_btn .more:hover{
-  /* background: var(--main-color1); */
+.main_visual .txt_area>.more_btn:hover{
+  box-shadow: var(--ball_shadow);
+  background: var(--main-color3);
   text-shadow: var(--font_W);
-  border-top: 1px solid rgba(116, 191, 197, .35);
-  border-right: 1px solid rgba(255, 255, 255, 0.4);
-  border-left: 1px solid rgba(116, 191, 197, .1);
 }
 
 .main_visual .txt_area .more_btn a span {
@@ -342,18 +339,19 @@ main {
 /* sub 공들*/
 .main_visual .sub {
   position: relative;
-  top: 28vh;
+  top: 30vh;
   right: 13vw;
   padding: 20px;
   transform-style: preserve-3d;
 }
+
 /* 소외계층 */
 .main_visual .sub .txt {
   position: absolute;
-  width: 216px;
-  height: 216px;
-  top: 262px;
-  left: 63px;
+  width: 200px;
+  height: 200px;
+  top: 200px;
+  left: 85px;
   color: var(--gray-09);
   align-items: center;
   justify-content: center;
@@ -369,7 +367,7 @@ main {
   border-top: 1px solid rgba(255, 255, 255, .2);
   border-bottom: 1px solid rgba(255, 255, 255, .15);
   border-left: 1px solid linear-gradient(rgba(43, 207, 161, .18));
-  z-index: 30;
+  z-index: 100;
 }
 
 .main_visual .sub .txt>h3{
@@ -389,9 +387,9 @@ main {
 /* 움직이는 공  */
 .ball_all{
   background: var(--glass-bg3);
-  width: 616px;
-  height: 550px;
-  border-radius: 200px;
+  width: 550px;
+  height: 450px;
+  border-radius: 300px 200px 300px 250px;
   perspective: 800px;
   transform: rotate(0);
   box-shadow: var(--ball_shadow);
@@ -401,8 +399,8 @@ main {
 
 .ball_all .ball{
   position: absolute;
-  width: 170px;
-  height: 170px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   background: var(--glass-bg2);
   box-shadow: var(--ball_shadow);
@@ -413,38 +411,37 @@ main {
 }
 
 .ball_all .ball:nth-child(2){
-  top: 244px;
+  top: 225px;
   left: 162px;
   z-index: 16;
   animation: ball_ani 5s .1s ease-in infinite;
 }
 
 .ball_all .ball:nth-child(3){
-  top: 238px;
-  left: 28px;
+  top: 236px;
+  left: 36px;
   z-index: 17;
   animation: ball_ani 5s .3s ease-in infinite;
 }
 .ball_all .ball:nth-child(4){
-  top: 347px;
+  top: 290px;
   left: 231px;
   z-index: 18;
   animation: ball_ani 4.5s .9s ease-out infinite;
-
 }
+
 .ball_all .ball:nth-child(5){
-  top: 109px;
-  left: 70px;
+  top: 100px;
+  left: 100px;
   z-index: 19;
   animation: ball_ani 5s .85s ease-out infinite;
-
 }
 .ball_all .ball:nth-child(6){
-  top: 262px;
-  left: 401px;
+  top: 231px;
+  left: 347px;
   z-index: 20;
   animation: ball_ani 4s .4s ease-in-out infinite;
-
+  
 }
 
 @keyframes ball_ani {
@@ -458,8 +455,8 @@ main {
   position: absolute;
   width: 300px;
   height: 300px;
-  top: 37px;
-  left: 253px;
+  top: 30px;
+  left: 230px;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -884,7 +881,7 @@ font-weight: 500;
 .pick_section .inner .arrow_btn .swiper_button_prev{
   left: 0;
   top: 50%;
-  color: var(--w-color);
+  color: var(--main-color5);
   font-size: 4rem;
   text-shadow: var(--ball_shadow);
   pointer-events: all;
@@ -1213,7 +1210,7 @@ font-weight: 500;
   align-items: center;
   text-align: center;
   color: var(--gray-09);
-  font-size: 36px;
+  font-size: 24px;
   font-weight: 500;
   padding: 6px 12px;
   border-radius: 50%;

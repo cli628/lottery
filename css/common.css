@@ -1,26 +1,26 @@
 @charset "utf-8";
 
 /* ball */
-/* background: linear-gradient(rgba(43, 207, 161, .18), rgba(116, 191, 197, .25)), linear-gradient(to right, rgba(116, 191, 197, .25), rgba(253, 255, 199, .15));
-background-blend-mode: overlay;
-background-blend-mode: difference;
-box-shadow: 0 0 20px rgba(0, 0, 0, 16%);
-color: var(--w-color);
-text-shadow: var(--font_W);
-backdrop-filter: blur(25px) saturate(50%);
-border-top: 1px solid rgba(255, 255, 255, .2);
-border-bottom: 1px solid rgba(255, 255, 255, .15);
-border-left: 1px solid linear-gradient(rgba(43, 207, 161, .18)); */
+/* background: linear-gradient(rgba(43, 207, 161, .18), rgba(116, 191, 197, .25)),    linear-gradient(to right, rgba(116, 191, 197, .25), rgba(253, 255, 199, .15));
+  background-blend-mode: overlay;
+  background-blend-mode: difference;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 16%);
+  color: var(--w-color);
+  text-shadow: var(--font_W);
+  backdrop-filter: blur(25px) saturate(50%);
+  border-top: 1px solid rgba(255, 255, 255, .2);
+  border-bottom: 1px solid rgba(255, 255, 255, .15);
+  border-left: 1px solid rgba(116, 191, 197, .1); */
 
 /* glass */
 /* backdrop-filter: blur(15px) saturate(50%);
-background: var(--glass-bg1);
-border-top: 1px solid radial-gradient(rgba(43, 207, 161, .18), rgba(116, 191, 197, .25));
-border-right: 1px solid rgba(255, 255, 255, 0.4);
-border-left: 1px solid rgba(116, 191, 197, .1);
-box-shadow: 0 0 20px rgba(0, 0, 0, 18px);
-text-shadow: var(--font_W);
-color: var(--w-color); */
+  background: var(--glass-bg1);
+  border-top: 1px solid rgba(255, 255, 255, .2);
+  border-right: 1px solid rgba(255, 255, 255, 0.4);
+  border-left: 1px solid rgba(116, 191, 197, .1);
+  box-shadow: var(--ball_shadow);
+  text-shadow: var(--font_W);
+  color: var(--w-color); */
 
 :root {
   font-size: 18px;
@@ -108,9 +108,12 @@ header::before {
   pointer-events: none;
   transition: opacity .3s;
   /* z-index: 5; */
-  clip-path:inset(70px 0 0 0); /* 상단 70px(헤더 높이) 제외 */
+  clip-path:inset(70px 0 0 0); 
 }
 
+header.sc{
+  display: none;
+}
 header.on::before {
   opacity: .2;
   pointer-events: auto;
@@ -339,7 +342,7 @@ header .ham_menu {
   color: var(--gray-08);
   border-top: 1px solid rgba(255, 255, 255, .2);
   border-bottom: 1px solid rgba(255, 255, 255, .15);
-  border-left: 1px solid linear-gradient(rgba(43, 207, 161, .18));
+  border-left: 1px solid rgba(116, 191, 197, .1);
   z-index: 50;
   border-radius: 80%;
   overflow: hidden;
@@ -631,7 +634,7 @@ footer .f_bottom>.f_right>li>a i{
   top: 0;
   left: 0;
   transform: rotate(45deg);
-  text-shadow: var(--font_W);
+  text-shadow: var(--font_B);
 }
 
 .copy {

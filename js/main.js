@@ -1,11 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   /* jsap */
- /* document.addEventListener("DOMContentLoaded", (event) => {
-  gsap.registerPlugin(ScrollTrigger)
+  gsap.registerPlugin(ScrollTrigger);
   // gsap code here!
+  gsap.to('.pick_section ', {
+	  trigger: '.tit_section',
+		pin: true, 
+		start: 'top top',
+		end: '+=400',
+		scrub: 1, 
+  });
 
- }); */
 
   /* 메인비주얼 */
 const selecter={
@@ -101,7 +106,7 @@ let swiper = new Swiper(".card_all", {
   effect: "coverflow",
   grabCursor: true,
   centeredSlides: true,
-  slidesPerView: "2",
+  slidesPerView: 2,
   loop:true,
   navigation: {
     nextEl: ".swiper_button_next",
@@ -113,11 +118,10 @@ let swiper = new Swiper(".card_all", {
   scrollbar: {
     el: ".swiper-scrollbar",
     },
-  /* pagination: {
-    el: ".swiper_pagination",
+  pagination: {
+    el: ".swiper_pagination>li button",
     clickable: true,
-    
-  } */
+  }
 });
 
 let pick_selector={
@@ -132,7 +136,7 @@ let pickBtn = new Swiper(pick_selector.btn, pick_btn_opt);
 
 let pickMain=new Swiper(pick_selector.main, {
   loop:true,
-  thumbs:{swiper:pick_btn_opt},
+  thumbs:{swiper:pickBtn },
 });
 
 
@@ -143,7 +147,7 @@ function marquee() {
     const rowWidth = row.scrollWidth;
 
     //최소 2세트 이상 복제
-    for(let i=1; i<10; i++){/* 클론 9개 복사 */
+    for(let i=1; i<5; i++){/* 클론 6개 복사 */
       wrap.appendChild(row.cloneNode(true));
     }
     const rows = wrap.querySelectorAll('.marquee_row');

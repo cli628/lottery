@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   /* jsap */
-gsap.registerPlugin(ScrollTrigger);
+/* gsap.registerPlugin(ScrollTrigger);
 
 ddocument.querySelectorAll(".faq_section .faq_list>li").forEach((item) => {
   const tl = gsap.timeline({
@@ -20,7 +20,7 @@ ddocument.querySelectorAll(".faq_section .faq_list>li").forEach((item) => {
     .to(item, { duration: 0.6 })
     .to(item, { height: 180, paddingTop: 50, paddingBottom: 50, duration: 0.2 });
 });
-
+ */
   /* 메인비주얼 */
 const selecter={
   btn:".main_visual>.inner>.bottom_btn",

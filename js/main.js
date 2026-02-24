@@ -1,26 +1,28 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   /* jsap */
-/* gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger);
 
-ddocument.querySelectorAll(".faq_section .faq_list>li").forEach((item) => {
-  const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: item,
-      start: "center center",
-      end: "+=200",
-      pin: true,
-      pinSpacing: true,
-      scrub: true,
-      anticipatePin: 1
-    }
+  document.querySelectorAll(".faq_section .inner .faq_list>li").forEach((item) => {
+    gsap.set(item, { willChange: "transform, height" });
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: item,
+        start: "center 60%",   // 중앙 살짝 아래에서 시작(더 자연스러움)
+        end: "+=200",
+        // pin: true,
+        pinSpacing: true,
+        scrub: true,
+        anticipatePin: 1,
+        // pinType: "transform", 
+      },
+      y: 0
+    });
+
+    
   });
 
-  tl.to(item, { height: 250, paddingTop: 60, paddingBottom: 60, duration: 0.2 })
-    .to(item, { duration: 0.6 })
-    .to(item, { height: 180, paddingTop: 50, paddingBottom: 50, duration: 0.2 });
-});
- */
   /* 메인비주얼 */
 const selecter={
   btn:".main_visual>.inner>.bottom_btn",

@@ -1194,7 +1194,7 @@ font-weight: 500;
   font-size: 48px;
 }
 
-/* 네모 동그라미 */
+/* 네모 동그라미 서비스 섹션 */
 .service_section .inner .service_grid {
   display:flex;
   flex-wrap:wrap;
@@ -1202,7 +1202,7 @@ font-weight: 500;
   left: 0;
   width: 1440px;
   height: 600px;
-  gap: 20px;
+  gap: 28px 16px;
   justify-content: center;
 }
 
@@ -1216,14 +1216,9 @@ font-weight: 500;
   justify-content: center;
   align-items: center;
   text-align: center;
-  /* background: #222; */
   color: var(--gray-09);
-  border-radius: 50%;
-  backdrop-filter: blur(25px) saturate(50%);
-  border-top: 1px solid var(--glass-bg3);
-  border-right: 1px solid rgba(255, 255, 255, 0.4);
-  border-left: 1px solid rgba(116, 191, 197, .1);
-  box-shadow: var(--ball_shadow);
+  background-blend-mode: difference;
+  background-blend-mode: overlay;
 }
 
 /* 동그라미 */
@@ -1235,12 +1230,15 @@ font-weight: 500;
   justify-content: center;
   align-items: center;
   position: relative;
+  transition: .3s;
   gap: 8px;
   font-weight: 500;
-  transition: .3s;
-  background-blend-mode: overlay;
-  background-blend-mode: difference;
-
+  backdrop-filter: blur(25px) saturate(50%);
+  border-top: 1px solid var(--glass-bg3);
+  border-right: 1px solid rgba(255, 255, 255, 0.4);
+  border-left: 1px solid rgba(116, 191, 197, .1);
+  box-shadow: var(--ball_shadow);
+  border-radius: 50%;
 }
 
 .service_section .inner .service_grid li>a em{
@@ -1271,11 +1269,14 @@ font-weight: 500;
   display: flex;
 }
 
-/* 호버시 네모 -> 원 상세내용 */
+/* 호버시  원-> 네모 상세내용 */
 .service_section .inner .service_grid li:hover>a{
   background: var(--main-color5);
   text-shadow: var(--font_W); 
   color: var(--w-color);
+  border-radius: 0%;
+  width: 310px;
+  height: 310px;
 }
 
 .service_section .inner .service_grid li:hover>a em{
@@ -1288,15 +1289,14 @@ font-weight: 500;
   border-radius: 0;
 }
 
-/* 네모 호버 */
+/* 네모 -> 원 호버 */
 .service_section .inner .service_grid li:nth-child(2n):hover a{
   color: var(--w-color);
   text-shadow: var(--font_W);
   background: var(--main-color5);
   border-radius: 50%;
-  width: 310px;
-  height: 310px;
-  border-radius: 0;
+  width: 320px;
+  height: 320px;
 }
 
 

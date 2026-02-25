@@ -40,11 +40,12 @@ main {
 /* 메인비주얼 */
 .main_visual {
   width: 100%;
-  height: 100vh;
+  height: 953px;
   padding-top: 70px;
   display: flex;
   position: relative;
 }
+
 .main_visual>.inner{
   width: 100%;
   height: 100%;
@@ -219,7 +220,7 @@ main {
   color: var(--gray-08);
   text-shadow: var(--font_W);
   background: var(--glass-bg4);
-  backdrop-filter: blur(20px) saturate(50%);
+  /* backdrop-filter: blur(20px) saturate(50%); */
   border-radius: var(--round);
   gap: 8px;
   font-size: 14px;
@@ -1206,47 +1207,83 @@ font-weight: 500;
 }
 
 .service_section .inner .service_grid li{ 
-  display: inline-block;
+  display: flex;
   width: 300px;
   height: 300px;
   position: relative;
   top: 0;
   left: 0;
-}
-
-/* 동그라미 */
-.service_section .inner .service_grid li a {
-  width: 310px;
-  height: 310px;
-  background-blend-mode: overlay;
-  background-blend-mode: difference;
-  display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+  /* background: #222; */
   color: var(--gray-09);
-  font-size: 24px;
-  font-weight: 500;
-  padding: 6px 12px;
   border-radius: 50%;
-  transition: .3s;
   backdrop-filter: blur(25px) saturate(50%);
-  border-top: 1px solid radial-gradient(rgba(43, 207, 161, .18), rgba(116, 191, 197, .25));
+  border-top: 1px solid var(--glass-bg3);
   border-right: 1px solid rgba(255, 255, 255, 0.4);
   border-left: 1px solid rgba(116, 191, 197, .1);
   box-shadow: var(--ball_shadow);
 }
 
-/* 동그라미 호버 */
-.service_section .inner .service_grid li:hover a{
+/* 동그라미 */
+.service_section .inner .service_grid li>a {
+  width: 310px;
+  height: 310px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  gap: 8px;
+  font-weight: 500;
+  transition: .3s;
+  background-blend-mode: overlay;
+  background-blend-mode: difference;
+
+}
+
+.service_section .inner .service_grid li>a em{
+  font-size: 24px;
+}
+
+.service_section .inner .service_grid li>a>p{
+  font-size: 18px;
+  width: 190px;
+  height: 20px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.service_section .inner .service_grid li a p:nth-child(5){
+  padding-top: 14px;
+}
+
+.service_section .inner .service_grid li>a p i{
+  width: 20px;
+  height: 20px;
+}
+
+/* 호버시 공통으로 바뀌는 것 */
+.service_section .inner .service_grid li:hover>a p{
+  display: flex;
+}
+
+/* 호버시 네모 -> 원 상세내용 */
+.service_section .inner .service_grid li:hover>a{
   background: var(--main-color5);
+  text-shadow: var(--font_W); 
   color: var(--w-color);
-  border-radius: 0;
-  text-shadow: var(--font_W);
+}
+
+.service_section .inner .service_grid li:hover>a em{
+  display: none;
 }
 
 /* 네모 */
-.service_section .inner .service_grid li:nth-child(2n) a{
+.service_section .inner .service_grid li:nth-child(2n)>a{
   background: var(--glass-bg3);
   border-radius: 0;
 }
@@ -1259,7 +1296,9 @@ font-weight: 500;
   border-radius: 50%;
   width: 310px;
   height: 310px;
+  border-radius: 0;
 }
+
 
 /* 순서바꾸기 */
 .service_section .inner .service_grid li:nth-child(5){

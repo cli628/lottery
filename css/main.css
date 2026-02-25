@@ -254,6 +254,7 @@ main {
 .main_visual .txt_area>.more_btn:hover{
   box-shadow: var(--ball_shadow);
   background: var(--main-color3);
+  color: var(--w-color);
   text-shadow: var(--font_W);
 }
 
@@ -1150,6 +1151,7 @@ font-weight: 500;
 .service_section {
   width:100%;
   height: 100%;
+
 }
 .service_section .inner{
   width: 100%;
@@ -1165,6 +1167,7 @@ font-weight: 500;
   align-items:center;
   justify-content: center;
   overflow:hidden;
+  margin: 0 auto;
 }
 
 /* 제목 */
@@ -1199,6 +1202,7 @@ font-weight: 500;
   width: 1440px;
   height: 600px;
   gap: 20px;
+  justify-content: center;
 }
 
 .service_section .inner .service_grid li{ 
@@ -1421,6 +1425,7 @@ font-weight: 500;
 
 .faq_section .inner .faq_list>li span{
   font-size: 24px;
+  padding-right: 6px;
 }
 
 .faq_section .inner .faq_list>li .faq_card{

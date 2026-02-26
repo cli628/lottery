@@ -918,20 +918,20 @@ font-weight: 500;
   overflow: hidden;
   top: 50vh;
   right: 0;
-  width: 1300px;
-  height: 1300px;
+  width: 1200px;
+  height: 1200px;
   position: absolute;
   display: block;
-  background: repeating-radial-gradient(circle at 0 0, rgba(0,0,0,.06) 0 1px, transparent 2px 4px);
+  background: url(../asset/img/ball_1.png);
   z-index: -60;
   pointer-events: none;
   border-radius: 50%;
-  transform: rotate(-180deg);
+  transform: rotate(0);
 }
 
 .pick_bg>.bg_ball:nth-child(2){
   left:0;
-  transform: rotate(0deg);
+  transform: rotate(-180deg);
 }
 
 /* 당첨자 인터뷰 부분 */
